@@ -1,0 +1,154 @@
+@import 'main';
+
+.contacts {
+    background-image: none;
+    position: relative;
+    display: block;
+    left: 0;
+    height: auto;
+    &__block{
+        margin-top: 9rem;
+    }
+    &__header {
+        padding: 0.0625rem 0;
+        padding-bottom: 3rem;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        background-image: url(../img/contacts_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+        margin-top: 7.5rem;
+        color: #FFF;
+    }
+    &__subtitle {
+        background: $footer;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 500;
+        text-align: left;
+        margin-top: 5.25rem;
+    }
+    &__content {
+        margin-top: 6vh;
+        display: block;
+    }
+
+    &__map {
+        width: 100%;
+        height: 43.25rem;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    &__stores {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 4.25rem;
+        margin-bottom: 6rem;
+    }
+
+    &__store {
+        margin-left: 3.8125rem;
+        margin-top: 3.8125rem;
+        border-radius: 0.75rem;
+        box-shadow: 0px 14.722px 29.4439px rgba(107, 77, 17, 0.25);
+
+        &:nth-child(7n+1) {
+            margin-left: 0;
+        }
+        &:nth-child(-n+7){
+            margin-top: 0;
+        }
+    }
+    &__filter{
+        display: flex;
+    }
+    &__checkbox{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    &__container {
+        display: block;
+        position: relative;
+        padding-left: 2.1875rem;
+        margin-left: 3.625rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        font-size: 1.125rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:first-child(){
+            margin-left: 0;
+        }
+        &>input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked ~ .contacts__checkmark{
+                background-color: $checkbox !important;
+                border: none;
+                &::after{
+                    display: block;
+                }
+            }
+        }
+        &:hover{
+            &:not(:checked){
+            &>input ~ .contacts__checkmark{
+                background-color: #ccc;
+            }}
+        }
+      }
+    &__checkmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1.5rem;
+        width: 1.5rem;
+        box-sizing: border-box;
+        background-color: $grey;
+        border: 1px solid $dark-grey;
+        border-radius: 0.25rem;
+
+
+        &::after{
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+}
+
+
+#map{
+
+}
+.footer{
+    background-image: $grad;
+    
+    &__nav{
+        border-top: none;
+    }
+}  
+  /* Style the checkmark/indicator */
+  .contacts__container .contacts__checkmark:after {
+    left: 0.5rem;
+    top: 0.25rem;
+    width: 0.3125rem;
+    height: 0.625rem;
+    border: solid white;
+    border-width: 0 0.1875rem 0.1875rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  

@@ -13,232 +13,69 @@
 	<title>Title</title>
 	<link rel="stylesheet" href="vendors/css/owl.carousel.min.css" type="text/css">
 	<link rel="stylesheet" href="vendors/css/owl.theme.default.min.css" type="text/css">
-	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<link rel="stylesheet" href="css/production.css" type="text/css">
+	<link rel="stylesheet" href="css/news.css" type="text/css">
 </head>
 
 <body>
-	<main class="production">
+	<main class="news">
 
-		<div class="production__header">
+		<div class="news__header">
 			<div class="wrapper">
-				<div class="production__container">
+				<div class="news__box">
 					@import "header.html"
-					<h1 class="production__title">Продукция</h1>
+					<h1 class="news__title">Новости</h1>
 				</div>
 			</div>
 		</div>
-		<section class="production__container">
+
+		<section class="news__block">
 			<div class="wrapper">
-				<div class="production__producers">
-					<button type="button" class="production__producer">
-						<img class="production__icon" src="img/icons/Знакомый вкус.svg" alt="">
-					</button>
-					<button type="button" class="production__producer">
-						<img class="production__icon" src="img/icons/Волжкий берег.svg" alt="">
-					</button>
-					<button type="button" class="production__producer">
-						<img class="production__icon" src="img/icons/Вкусный день.svg" alt="">
-					</button>
-					<button type="button" class="production__producer">
-						<img class="production__icon" src="img/icons/Крепыш.svg" alt="">
-					</button>
-				</div>
-
-				<div class="production__categories">
-					<h3 class="production__subtitle">
-						Категории товаров
+				<div class="news__container">
+					<h3 class="news__subtitle">
+						2020
 					</h3>
-					<div class="production__flex">
-						<button type="button" class="production__category active">
-							Кисломолочная продукция
-						</button>
-						<button type="button" class="production__category">
-							Детское питание
-						</button>
-						<button type="button" class="production__category">
-							Десертная группа
-						</button>
-						<button type="button" class="production__category">
-							Мультяшные герои
-						</button>
-						<button type="button" class="production__category">
-							Весовая продукция
-						</button>
-						<button type="button" class="production__category">
-							Сыры плавленные
-						</button>
+					<div class="news__items">
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture1.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture2.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture3.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
 					</div>
+					<button type="button" onclick="moreNews(this)" class="news__more">
+						Еще новости
+					</button>
 				</div>
-				<div class="production__types">
-					<h3 class="production__subtitle">
-						Тип продукции
+				<div class="news__container">
+					<h3 class="news__subtitle">
+						2019
 					</h3>
-					<div class="production__flex">
-						<button type="button" class="production__type active">
-							Молоко
-						</button>
-						<button type="button" class="production__type">
-							Сливки
-						</button>
-						<button type="button" class="production__type">
-							Сметана
-						</button>
-						<button type="button" class="production__type">
-							Кефир
-						</button>
-						<button type="button" class="production__type">
-							Ряженка
-						</button>
-						<button type="button" class="production__type">
-							Снежок
-						</button>
-						<button type="button" class="production__type">
-							Творог
-						</button>
-						<button type="button" class="production__type">
-							Вся продукция
-						</button>
+					<div class="news__items">
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture3.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture2.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
+						<a href="#" class="news__content">
+							<img class="news__img" src="img/news-picture1.jpg" alt="">
+							«Крепыш» один из лучших на «Золотой осени» 2013
+						</a>
 					</div>
-				</div>
-				<div class="production__content">
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product3.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product2.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" data-title="Сырки глазированные" data-description="творожные с ванилью" data-weight="300г"
-								src="img/product4.png" alt="">
-							<img class="production__img" data-title="Сырки не глазированные" data-description="не творожные с не ванилью"
-								data-weight="-300г" src="img/product4.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product4.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" data-title="Сырки глазированные" data-description="творожные с ванилью" data-weight="300г"
-								src="img/product3.png" alt="">
-							<img class="production__img" data-title="Сырки не глазированные" data-description="не творожные с не ванилью"
-								data-weight="-300г" src="img/product3.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
-
-					<div class="production__item">
-						<div class="production__images">
-							<img class="production__img" src="img/product2.png" alt="">
-						</div>
-						<div class="production__name">
-							Сырки глазированные
-						</div>
-						<div class="production__subname">
-							творожные с ванилью
-						</div>
-						<div class="production__weight">
-							300г
-						</div>
-						<button type="button" class="production__more">Подробнее</button>
-					</div>
+					<button type="button" onclick="moreNews(this)" class="news__more">
+						Еще новости
+					</button>
 				</div>
 			</div>
 		</section>
-		</div>
 	</main>
 	<!--<div class="preloader"></div>-->
 

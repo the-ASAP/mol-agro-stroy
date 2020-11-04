@@ -1,0 +1,103 @@
+@import 'main';
+
+.recipes {
+    background-image: none;
+    position: relative;
+    display: block;
+    left: 0;
+    height: auto;
+
+    &__block{
+        margin-bottom: 6rem;
+    }
+    &__header {
+        padding: 0.0625rem 0;
+        padding-bottom: 3rem;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        background-image: url(../img/news_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+        margin-top: 7.5rem;
+        color: #FFF;
+    }
+
+    &__subtitle {
+        margin: 3.875rem 0;
+        background: $footer;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 1.375rem;
+        height: 447px;
+        width: 30%;
+        border: 2px solid #8F9BB3;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        color: $dark-grey;
+        margin-left: 5%;
+
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    &__img{
+        border-radius: 0.625rem;
+    }
+    &__name{
+        color: $gen;
+    }
+    &__comment {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &>svg {
+            height: auto;
+        }
+    }
+    &__more{
+        margin: 0 auto;
+        margin-top: 4.625rem;
+        @extend %button--small;
+        text-transform: uppercase;
+        border: 2px solid $dark-grey;
+        width: 12.625rem;
+        height: 3.25rem;
+        box-shadow: none;
+
+        &:hover{
+            border: 2px solid $dark-grey;
+        }
+}
+}
+
+.footer {
+    background-image: $grad;
+
+    &__nav {
+        border-top: none;
+    }
+}

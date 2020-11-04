@@ -130,16 +130,17 @@
     font-size: 0.875rem; //14px
     text-align: center;
     letter-spacing: -0.01em;
-    transition: ease-out .2s;
+    transition: ease .2s;
 
     &.active{
         background-image: $grad;
+        color: #FFF;
     }
 
     &:not(.active):hover{
         color: $dark-grey;
         background-color: #E8F0FA;
-        border: 1px solid $dark-grey;
+        border: solid $dark-grey;
         background-image: $light-grey;
     }
 

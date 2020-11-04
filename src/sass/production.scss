@@ -1,12 +1,6 @@
-@import 'keyframes';
-@import 'mixins';
-@import 'fonts';
+@import 'main';
 
 .production {
-    position: relative;
-    display: block;
-    left: 0;
-    height: auto;
     &__header {
         padding: 0.0625rem 0;
         padding-bottom: 3rem;
@@ -127,6 +121,7 @@
     }
     &__container{
         flex-direction: column;
+        align-items: flex-start;
     }
     &__images{
         width: 100%;
@@ -194,6 +189,14 @@
     cursor: default;
 }
 
+.production .owl-item:not(.active){
+    opacity: 1;
+}
+
 .footer {
     background-image: $grad;
+    
+    &__nav{
+        border-top: none;
+    }
 }
