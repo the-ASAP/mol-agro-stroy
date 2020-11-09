@@ -42,9 +42,6 @@ section {
     position: relative;
 }
 
-p {
-    color: $text;
-}
 
 ul {
     list-style: none;
@@ -184,7 +181,7 @@ input {
             height: 2px;
             width: 0;
             background-color: $accent;
-            transition: width .2s ease-in-out;
+            transition: width .2s ease;
             left: 50%;
             bottom: 0;
         }
@@ -196,7 +193,7 @@ input {
             height: 2px;
             width: 0;
             background-color: $accent;
-            transition: width .2s ease-in-out, left .2s ease-in-out;
+            transition: width .2s ease, left .2s ease;
             left: 50%;
             bottom: 0;
         }

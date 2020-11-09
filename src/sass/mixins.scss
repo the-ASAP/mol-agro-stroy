@@ -60,6 +60,48 @@
 /*Кнопка меню*/
 /*В разметке обязательно должна иметь внутренний span */
 /*<button class="burger"><span></span></button>*/
+%select{
+    & > button{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &::after,
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 1.25rem;
+            height: 1px;
+            width: 5px;
+            background-color: $gen;
+            transform: rotate(-45deg);
+            transition: transform .3s;
+        }
+        &::before{
+            right: calc(1.25rem + 3px);
+            transform: rotate(45deg);
+        }
+        &.isOpen{
+            &::after{
+                transform: rotate(45deg);
+            }
+            &::before{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    & > div{
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 2;
+        background-color: #fff;
+    }
+}
+
 %burger {
     overflow: visible;
 
@@ -140,7 +182,7 @@
     &:not(.active):hover{
         color: $dark-grey;
         background-color: #E8F0FA;
-        border: solid $dark-grey;
+        border-color: $dark-grey;
         background-image: $light-grey;
     }
 

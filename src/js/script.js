@@ -102,57 +102,69 @@ const yandexMapCheckbox = (item, content) => {
     if ($('#map').length > 0) {
 
         const center = [52.8676167131164, 43.44382600676518];
+
+        const coordsnames = ['Москва', 'Нижний Новгород', 'Тольятти', 'Воронеж',
+        'Волгоград', 'Саратов'] //Порядок порядок во всех массивах не случаен, массивы связаны по индексам
         const coords = [
-
-
-            [51.57219613776153, 39.31296663176517],
-            [51.8724216336643, 39.34592561614017],
-            [51.661107725177764, 39.290993975515185],
-            [51.48310939769139, 39.148171709890185],
-            [55.7292249520377, 35.26138063406282],
-            [56.24651800341893, 34.84390016531281],
-            [55.79212984897214, 37.616237390624995],
-
-            [53.70069434739826, 48.61931711681259],
-            [53.543938625648615, 48.113946023062574],
-            [53.406297154428586, 48.55339914806257],
-            [54.01892378695066, 48.35564524181259],
-
-            [56.044053283257334, 44.213799538687574],
-            [56.044053283257334, 45.54314524181257],
-            [55.98866904055193, 43.433770241812574],
-
-            [55.517791982622356, 37.89666086681258],
+            [[55.517791982622356, 37.89666086681258],
             [54.74356271967586, 38.17131906993757],
             [55.791100679667295, 37.369317116812574],
+            [55.7292249520377, 35.26138063406282],
+            [56.24651800341893, 34.84390016531281],
+            [55.79212984897214, 37.616237390624995]], // Москва
 
-            [51.48344686261666, 46.10693359863277],
-            [51.497592406752176, 45.843948369140584],
+            [[56.044053283257334, 44.213799538687574],
+            [56.044053283257334, 45.54314524181257],
+            [55.98866904055193, 43.433770241812574]], // Нижний Новгород
 
-            [48.700920378220324, 45.18960311594534],
-            [49.3511384427967, 43.81631210032034]
+            [[53.70069434739826, 48.61931711681259],
+            [53.543938625648615, 48.113946023062574],
+            [53.406297154428586, 48.55339914806257],
+            [54.01892378695066, 48.35564524181259]], // Тольятти
+
+            [[51.57219613776153, 39.31296663176517],
+            [51.8724216336643, 39.34592561614017],
+            [51.661107725177764, 39.290993975515185],
+            [51.48310939769139, 39.148171709890185]], // Воронеж
+
+            [[48.700920378220324, 45.18960311594534],
+            [49.3511384427967, 43.81631210032034]], // Волгоград
+
+            [[51.48344686261666, 46.10693359863277],
+            [51.497592406752176, 45.843948369140584]] // Саратов
+
+
 
         ];
         const redcoords = [
-            [54.940116332670264, 37.45720774181258],
-            [56.447772637656286, 44.15886789806257],
-            [53.393165040639886, 48.92693430431257],
-            [51.65200709025026, 38.84637675292965],
-            [48.871557359497196, 44.30267127441403],
-            [51.540858933675324, 46.00736999999997]
-
+            [54.940116332670264, 37.45720774181258], //Москва
+            [56.447772637656286, 44.15886789806257], // НН
+            [53.393165040639886, 48.92693430431257], // Тольятти
+            [51.65200709025026, 38.84637675292965], // Воронеж
+            [48.871557359497196, 44.30267127441403], //Волгоград
+            [51.540858933675324, 46.00736999999997] //Саратов
         ]
         const orangecoords = [
-            [54.836633957194664, 37.503440137419325],
-            [54.928477306896326, 38.28896259835681],
-            [55.80756259301076, 45.73219990304433]
+            [[54.836633957194664, 37.503440137419325],
+            [54.928477306896326, 38.28896259835681],],
+
+            [[55.80756259301076, 45.73219990304433]],
+
+            [],
+
+            [],
+
+            [],
+
+            []
         ]
         var bluePlacemark = [];
         var bluetrigger = false;
         var redPlacemark = [];
-        var redtrigger = false;
+        var redtrigger = true;
         var orangePlacemark = [];
         var orangetrigger = false;
+        let current = null;
         ymaps.ready(() => {
             var myMap = new ymaps.Map("map", {
                 center: center,
@@ -162,13 +174,17 @@ const yandexMapCheckbox = (item, content) => {
             }, {
                 suppressMapOpenBlock: true
             });
+            
             for (let i = 0; i < coords.length; i++) {
-                bluePlacemark.push(new ymaps.Placemark(coords[i], {
+                bluePlacemark.push([])
+                for (let j = 0; j < coords[i].length; j++){
+                bluePlacemark[i].push(new ymaps.Placemark(coords[i][j], {
                     hintContent: content
                 }))
-                myMap.geoObjects.add(bluePlacemark[i]);
-                bluePlacemark[i].options.set('visible', bluetrigger);
+                myMap.geoObjects.add(bluePlacemark[i][j]);
+                bluePlacemark[i][j].options.set('visible', bluetrigger);
             }
+        }
             for (let i = 0; i < redcoords.length; i++) {
                 redPlacemark.push(new ymaps.Placemark(redcoords[i], {}, {
                     preset: 'islands#redIcon',
@@ -177,41 +193,81 @@ const yandexMapCheckbox = (item, content) => {
                 redPlacemark[i].options.set('visible', redtrigger);
             }
             for (let i = 0; i < orangecoords.length; i++) {
-                orangePlacemark.push(new ymaps.Placemark(orangecoords[i], {}, {
-                    preset: 'islands#orangeIcon',
+                orangePlacemark.push([])
+                for (let j = 0; j < orangecoords[i].length; j++){
+                orangePlacemark[i].push(new ymaps.Placemark(orangecoords[i][j],{}, {
+                    preset: 'islands#orangeIcon'
                 }))
-                myMap.geoObjects.add(orangePlacemark[i]);
-                orangePlacemark[i].options.set('visible', orangetrigger);
+                myMap.geoObjects.add(orangePlacemark[i][j]);
+                orangePlacemark[i][j].options.set('visible', orangetrigger);
             }
+        }
             myMap.controls.remove('routeEditor');
             myMap.behaviors.disable('scrollZoom');
 
+            function chooseCity(value) {
+                if (value==='all'){
+                    redPlacemark.forEach(el => {
+                        el.options.set('visible', true)
+                    })
+                    bluePlacemark.flat(1).forEach(el => {
+                        el.options.set('visible', bluetrigger)
+                    })
+                    orangePlacemark.flat(1).forEach(el => {
+                        el.options.set('visible', bluetrigger)
+                    })
+                    current = null
+                } else{
+                    current = coordsnames.indexOf(value)
+                    redPlacemark.forEach(el => {
+                        el.options.set('visible', false)
+                    })
+                    bluePlacemark.flat(1).forEach(el => {
+                        el.options.set('visible', false)
+                    })
+                    orangePlacemark.flat(1).forEach(el => {
+                        el.options.set('visible', false)
+                    })
+
+
+                    redPlacemark[current].options.set('visible', true)
+                    bluePlacemark[current].forEach(el => {
+                        el.options.set('visible', bluetrigger)
+                    })
+                    orangePlacemark[current].forEach(el => {
+                        el.options.set('visible', orangetrigger)
+                    })
+                    
+                }
+
+            }
             function checkState(attr) {
                 switch (attr) {
-                    case 0:
-                        redtrigger = !redtrigger;
-                        redPlacemark.forEach(el => {
-                            el.options.set('visible', redtrigger)
-
+                    case 1:
+                        bluetrigger = !bluetrigger;
+                        if (current === null){
+                        bluePlacemark.flat(1).forEach(el => {
+                            el.options.set('visible', bluetrigger)
                         })
+                    } else {
+                        bluePlacemark[current].flat(1).forEach(el => {
+                            el.options.set('visible', bluetrigger)
+                        })
+                    }
 
                         break
 
                     case 2:
-                        bluetrigger = !bluetrigger;
-                        bluePlacemark.forEach(el => {
-                            el.options.set('visible', bluetrigger)
-
-                        })
-
-                        break
-
-                    case 1:
                         orangetrigger = !orangetrigger;
-                        orangePlacemark.forEach(el => {
+                        if (current === null){
+                        orangePlacemark.flat(1).forEach(el => {
                             el.options.set('visible', orangetrigger)
-
                         })
+                    } else {
+                        orangePlacemark[current].flat(1).forEach(el => {
+                            el.options.set('visible', orangetrigger)
+                        })
+                    }
 
                         break
                     default:
@@ -221,6 +277,9 @@ const yandexMapCheckbox = (item, content) => {
             }
             $(".contact__category").on('click', function () {
                 checkState($(this).parent().index())
+            })
+            $(".contacts__fieldOption").on('click', function () {
+                chooseCity($(this).attr('data-name'));
             })
         });
     }
@@ -354,6 +413,42 @@ const appear = () => {
     })
 }
 
+// Выпадающий список на странице с картой
+const inputTypeSelect = (item) => {
+    const btn = $(item).children("button"),
+        box = btn.next("div");
+    let input, val;
+    let button = $('.selected')
+
+    function closeSelect(btn, box) {
+        btn.removeClass("isOpen");
+        box.slideUp(200);
+        setTimeout(() => $(btn).parent().removeClass("isOpen"), 200)
+
+    }
+
+    btn.on("click", function () {
+        input = $(this).siblings("input");
+
+        if (!$(this).hasClass("isOpen")) {
+
+            $(this).parent().addClass("isOpen");
+            $(this).addClass("isOpen");
+            $(this).next("div").slideDown(200);
+        } else {
+            closeSelect($(this), box);
+        }
+    });
+    box.find("div").on("click", function () {
+        val = $(this).text();
+        $(button).removeClass('selected')
+        button = this;
+        $(button).addClass('selected')
+        input.val(val).attr("value", val);
+        closeSelect(btn, box);
+    });
+};
+
 $().ready(() => {
     $(".promo__products").on('click', function () {
         openMenu($(".menu"))
@@ -363,8 +458,7 @@ $().ready(() => {
         closeMenu($(".menu"))
         freeScroll();
     })
-
-
+    inputTypeSelect($('.contacts__field'))
     contentFadeInOnReady()
     bindModalListeners([]);
     appear();
@@ -384,6 +478,13 @@ $().ready(() => {
         nav: true,
         navContainer: ".news__navigate",
     });
+    owlGallery(".other__slider", {
+        margin: 36,
+        items: 3,
+        dots: false,
+        nav: true,
+        navContainer: ".other__navigate",
+    });
     owlGallery(".menu__slider", {
         margin: 40,
         items: 4,
@@ -391,13 +492,21 @@ $().ready(() => {
         nav: true,
         navContainer: ".menu__navigate",
     });
-    owlGallerySize(".other__slider", {
+    owlGallerySize(".other-event__slider", {
         margin: 64,
-        items: 3,
+        items: 2,
         autoWidth: true,
         dots: false,
         nav: true,
-        navContainer: ".other__navigate",
+        navContainer: ".other-event__navigate",
+    });
+    owlGallerySize(".other-recipe__slider", {
+        margin: 64,
+        items: 2,
+        autoWidth: true,
+        dots: false,
+        nav: true,
+        navContainer: ".other-recipe__navigate",
     });
     multiCheck('menu');
     multiCheck('production');

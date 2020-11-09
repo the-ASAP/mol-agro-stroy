@@ -31,23 +31,36 @@
 		<section class="contacts__block">
 			<div class="wrapper">
 				<div class="contacts__filter">
-					<label class="contacts__container">Города
-						<input class="contact__category" id="cities" type="checkbox">
+					<div class="contacts__field contacts__field--select">
+						<button type="button" class="contacts__selectBtn"></button>
+						<div class="contacts__fieldOptions">
+							<div class="contacts__fieldOption selected" data-name='all'>Все города</div>
+							<div class="contacts__fieldOption" data-name='Воронеж'>Воронеж</div>
+							<div class="contacts__fieldOption" data-name='Волгоград'>Волгоград</div>
+							<div class="contacts__fieldOption" data-name='Москва'>Москва</div>
+							<div class="contacts__fieldOption" data-name='Нижний Новгород'>Нижний Новгород</div>
+							<div class="contacts__fieldOption" data-name='Саратов'>Саратов</div>
+						</div>
+						<input type="text" class="contacts__input" value="Все города">
+						<label for="" class="contacts__label"></label>
+					</div>
+
+					<label class="contacts__container">Фирменная розница
+						<input class="contact__category" id="firm" type="radio" checked="checked" name="radio">
 						<span class="contacts__checkmark"></span>
-					</label>
-					<label  class="contacts__container">Фирменная розница
-						<input class="contact__category" id="firm" type="checkbox">
+					  </label>
+					  <label class="contacts__container">Склады
+						<input class="contact__category" id="storage" type="radio" name="radio">
 						<span class="contacts__checkmark"></span>
-					</label>
-					<label class="contacts__container">Склады
-						<input class="contact__category" id="storage" type="checkbox">
-						<span class="contacts__checkmark"></span>
-					</label>
+					  </label>
 				</div>
 				<div class="contacts__content">
 
 					<div class="contacts__map">
 						<div id="map"></div>
+						<div class="contacts__menu">
+
+						</div>
 					</div>
 					<h3 class="contacts__subtitle">
 						Где купить?

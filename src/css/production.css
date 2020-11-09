@@ -113,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 .production__category:not(.active):hover {
   color: #8F9BB3;
   background-color: #E8F0FA;
-  border: solid #8F9BB3;
+  border-color: #8F9BB3;
   background-image: #E8F0FA;
 }
 
@@ -187,10 +187,6 @@ body {
 
 section {
   position: relative;
-}
-
-p {
-  color: #F3F7FA;
 }
 
 ul {
@@ -322,7 +318,7 @@ input:-webkit-autofill:focus {
   height: 2px;
   width: 0;
   background-color: #F3F7FA;
-  transition: width .2s ease-in-out;
+  transition: width .2s ease;
   left: 50%;
   bottom: 0;
 }
@@ -334,7 +330,7 @@ input:-webkit-autofill:focus {
   height: 2px;
   width: 0;
   background-color: #F3F7FA;
-  transition: width .2s ease-in-out, left .2s ease-in-out;
+  transition: width .2s ease, left .2s ease;
   left: 50%;
   bottom: 0;
 }
