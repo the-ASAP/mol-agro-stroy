@@ -159,7 +159,7 @@ const yandexMapCheckbox = (item, content) => {
             []
         ]
         var bluePlacemark = [];
-        var bluetrigger = false;
+        var bluetrigger = true;
         var redPlacemark = [];
         var redtrigger = true;
         var orangePlacemark = [];
@@ -204,9 +204,17 @@ const yandexMapCheckbox = (item, content) => {
         }
             myMap.controls.remove('routeEditor');
             myMap.behaviors.disable('scrollZoom');
+            chooseCity('all')
+            checkState(1)
 
             function chooseCity(value) {
+                document.querySelectorAll('.contacts__city').forEach( el =>{
+                    $(el).removeClass('active')
+                })
                 if (value==='all'){
+                    document.querySelectorAll('.contacts__city').forEach( el =>{
+                        $(el).addClass('active')
+                    })
                     redPlacemark.forEach(el => {
                         el.options.set('visible', true)
                     })
@@ -214,11 +222,13 @@ const yandexMapCheckbox = (item, content) => {
                         el.options.set('visible', bluetrigger)
                     })
                     orangePlacemark.flat(1).forEach(el => {
-                        el.options.set('visible', bluetrigger)
+                        el.options.set('visible', orangetrigger)
                     })
                     current = null
                 } else{
                     current = coordsnames.indexOf(value)
+                    let item = $('[data-name="' + value + '"]')[1]
+                    $(item).addClass('active')
                     redPlacemark.forEach(el => {
                         el.options.set('visible', false)
                     })
@@ -228,7 +238,6 @@ const yandexMapCheckbox = (item, content) => {
                     orangePlacemark.flat(1).forEach(el => {
                         el.options.set('visible', false)
                     })
-
 
                     redPlacemark[current].options.set('visible', true)
                     bluePlacemark[current].forEach(el => {
@@ -241,31 +250,74 @@ const yandexMapCheckbox = (item, content) => {
                 }
 
             }
+
+            let changeCenter = (city, obj, type) => {
+                let target = coordsnames.indexOf(city)
+            if (type != "storage"){
+                myMap.setCenter(coords[target][obj], 12, {
+                    checkZoomRange: true
+                });
+            } else {
+                myMap.setCenter(orangecoords[target][$(obj).parent().find('.contacts__item-storage').index(obj)], 12, {
+                    checkZoomRange: true
+                });
+            }
+        }
             function checkState(attr) {
                 switch (attr) {
                     case 1:
-                        bluetrigger = !bluetrigger;
+                        bluetrigger = true;
+                        orangetrigger = false;
+                        orangePlacemark.flat(1).forEach(el => {
+                            el.options.set('visible', false)
+                        })
+                        document.querySelectorAll('.contacts__item').forEach( el =>{
+                            $(el).addClass('active')
+                        })
+                        document.querySelectorAll('.contacts__item-storage').forEach( el =>{
+                            $(el).removeClass('active')
+                        })
+                        document.querySelectorAll('.contacts__city').forEach( el =>{
+                                $(el).removeClass('hidden')
+                        })
                         if (current === null){
                         bluePlacemark.flat(1).forEach(el => {
-                            el.options.set('visible', bluetrigger)
+                            el.options.set('visible', true)
+                            
                         })
+
                     } else {
                         bluePlacemark[current].flat(1).forEach(el => {
-                            el.options.set('visible', bluetrigger)
+                            el.options.set('visible', true)
                         })
                     }
 
                         break
 
                     case 2:
-                        orangetrigger = !orangetrigger;
+                        bluePlacemark.flat(1).forEach(el => {
+                            el.options.set('visible', false)
+                        })
+                        orangetrigger = true;
+                        bluetrigger = false;
+                        document.querySelectorAll('.contacts__item').forEach( el =>{
+                            $(el).removeClass('active')
+                        })
+                        document.querySelectorAll('.contacts__item-storage').forEach( el =>{
+                            $(el).addClass('active')
+                        })
+                        document.querySelectorAll('.contacts__city').forEach( el =>{
+                            if ($(el).find('.contacts__item-storage').index() == -1){
+                                $(el).addClass('hidden')
+                            }
+                        })
                         if (current === null){
                         orangePlacemark.flat(1).forEach(el => {
-                            el.options.set('visible', orangetrigger)
+                            el.options.set('visible', true)
                         })
                     } else {
                         orangePlacemark[current].flat(1).forEach(el => {
-                            el.options.set('visible', orangetrigger)
+                            el.options.set('visible', true)
                         })
                     }
 
@@ -280,6 +332,12 @@ const yandexMapCheckbox = (item, content) => {
             })
             $(".contacts__fieldOption").on('click', function () {
                 chooseCity($(this).attr('data-name'));
+            })
+            $(".contacts__item").on('click', function () {
+                changeCenter($(this).parent().attr('data-name'), $(this).index(), $(this).attr('data-type'));
+            })
+            $(".contacts__item-storage").on('click', function () {
+                changeCenter($(this).parent().attr('data-name'), $(this), $(this).attr('data-type'));
             })
         });
     }
@@ -510,5 +568,4 @@ $().ready(() => {
     });
     multiCheck('menu');
     multiCheck('production');
-
 });

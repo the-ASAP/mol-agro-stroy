@@ -54,9 +54,15 @@ body {
     }
 
     &__menu {
+        box-sizing: border-box;
         width: 30%;
         height: 100%;
         background-color: $menu;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        overflow-y: scroll;
     }
 
     &__stores {
@@ -205,6 +211,48 @@ body {
             background-color: $blue-subtitle;
         }
 
+    }
+    &__city{
+        width: 90%;
+        margin-bottom: 1.875rem;
+        display: none;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &.active{
+            display: block;
+        }
+        &.hidden{
+            display: none;
+        }
+    }
+    &__title-name{
+        color: $blue-subtitle;
+    }
+    &__item, &__item-storage{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 0.875rem;
+        box-sizing: border-box;
+        height: 9.25rem;
+        padding: 1rem 1.25rem;
+        background-color: #FFF;
+        filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.09));
+        border-radius: 0.5rem;
+        margin-top: 0.75rem;
+        display: none;
+
+        &.active{
+            display: flex;
+        }
+
+    }
+    &__name{
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-align: left;
     }
 }
 

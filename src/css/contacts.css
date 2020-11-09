@@ -1170,9 +1170,15 @@ body {
 }
 
 .contacts__menu {
+  box-sizing: border-box;
   width: 30%;
   height: 100%;
   background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  overflow-y: scroll;
 }
 
 .contacts__stores {
@@ -1325,6 +1331,55 @@ body {
 .contacts__fieldOption:hover {
   color: #FFF;
   background-color: #3293FF;
+}
+
+.contacts__city {
+  width: 90%;
+  margin-bottom: 1.875rem;
+  display: none;
+}
+
+.contacts__city:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__city.active {
+  display: block;
+}
+
+.contacts__city.hidden {
+  display: none;
+}
+
+.contacts__title-name {
+  color: #3293FF;
+}
+
+.contacts__item,
+.contacts__item-storage {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  height: 9.25rem;
+  padding: 1rem 1.25rem;
+  background-color: #FFF;
+  filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.09));
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  display: none;
+}
+
+.contacts__item.active,
+.contacts__item-storage.active {
+  display: flex;
+}
+
+.contacts__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
 }
 
 #map {
