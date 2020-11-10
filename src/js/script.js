@@ -343,7 +343,32 @@ const yandexMapCheckbox = (item, content) => {
     }
 }
 
+const yandexMapContact = () => {
+    if ($('#map').length > 0) {
+        const center = [51.542089925604415,46.168938187855495];
+        const coords = [51.556270679051146,46.023970155018596]
+        
+        var myPlacemark;
+        ymaps.ready(() => {
+            var myMap = new ymaps.Map("map", {
+                center: center,
+                zoom: 11,
+                "multiTouch": false,
+                controls: ['zoomControl']
+            }, {
+                suppressMapOpenBlock: true
+            });
 
+                myPlacemark = new ymaps.Placemark(coords,{}, {
+                    preset: 'islands#redIcon',
+                });
+                myMap.geoObjects.add(myPlacemark);
+
+            myMap.controls.remove('routeEditor');
+            myMap.behaviors.disable('scrollZoom');
+        });
+    }
+}
 
 const owlGallery = (selector, params) => {
     if (params == undefined) params = "";
@@ -506,7 +531,44 @@ const inputTypeSelect = (item) => {
         closeSelect(btn, box);
     });
 };
+function changeCharacteristics(button, values, img, composition){
+    let target, source;
+    
+    $(button).parent().find('.active').removeClass('active')
+    $(button).addClass('active')
 
+    $(img).parent().find('.active').removeClass('active')
+    $((img).eq($(button).index())[0]).addClass('active')
+
+    $(composition).parent().find('.current').removeClass('current')
+    $((composition).eq($(button).index())[0]).addClass('current')
+
+    target = $($(values[0]).find('span'))[0]
+    source = $(img).parent().find('.active').attr('data-volume')
+    $(target).text(source)
+    target = $($(values[0]).find('span'))[1]
+    source = $(img).parent().find('.active').attr('data-number')
+    $(target).text(source)
+    target = $($(values[0]).find('span'))[2]
+    source = $(img).parent().find('.active').attr('data-time')
+    $(target).text(source)
+    target = $($(values[0]).find('span'))[3]
+    source = $(img).parent().find('.active').attr('data-gost')
+    $(target).text(source)
+}
+function descriptionSwitch(button) {
+
+    $(button).parent().find('.active').removeClass('active')
+    $(button).addClass('active')
+
+    if ($(button).index() == 1) {
+        $(".item__composition").removeClass('active')
+        $(".item__description").addClass('active')
+    } else {
+        $(".item__description").removeClass('active')
+        $(".item__composition").addClass('active')
+    }
+}
 $().ready(() => {
     $(".promo__products").on('click', function () {
         openMenu($(".menu"))
@@ -516,12 +578,19 @@ $().ready(() => {
         closeMenu($(".menu"))
         freeScroll();
     })
+    $(".item__variety").on('click', function () {
+        changeCharacteristics(this, $(".item__value"), $(".item__img"), $(".item__composition"))
+    })
+    $(".item__button").on('click', function () {
+        descriptionSwitch(this)
+    })
     inputTypeSelect($('.contacts__field'))
     contentFadeInOnReady()
     bindModalListeners([]);
     appear();
-    if ($('.position__map').length) yandexMap("");
-    if ($('.contacts__map').length) yandexMapCheckbox("");
+    if ($('.position__map').length) yandexMap();
+    if ($('.contacts__map').length) yandexMapCheckbox();
+    if ($('.contact__map').length) yandexMapContact();
     owlGallery(".products__slider", {
         margin: 80,
         items: 3,

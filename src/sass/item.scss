@@ -49,10 +49,15 @@
         max-height: 90%;
         max-width: 90%;
         filter: drop-shadow(0px 16px 32px rgba(17, 75, 107, 0.25));
+        display: none;
+        &.active{
+            display: block;
+        }
     }
     &__content{
         width: 50%;
     }
+    
     &__producer {
         box-sizing: border-box;
         width: 10.75rem;
@@ -130,12 +135,26 @@
             cursor: default;
         }
     }
-    &__description{
+    &__description, &__composition{
         margin-top: 3.5rem;
         color: $dark-grey;
+        display: none;
         &>p{
             margin-top: 1.25rem;
             color: $gen;
+        }
+    }
+    &__description{
+        &.active{
+            display: block;
+        }
+    }
+    &__composition{
+        
+        &.active{
+            &.current{
+                display: block;
+            }
         }
     }
 }
