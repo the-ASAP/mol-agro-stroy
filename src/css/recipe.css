@@ -408,6 +408,14 @@ input:-webkit-autofill:focus {
   font-size: 1.375rem;
 }
 
+.header__social {
+  display: none;
+}
+
+.header__menu {
+  display: none;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -496,6 +504,10 @@ input:-webkit-autofill:focus {
   width: 54.375rem;
   max-width: 100%;
   margin-left: 4.5rem;
+}
+
+.promo__big-container {
+  height: 100vh;
 }
 
 .promo__about {
@@ -913,7 +925,6 @@ input:-webkit-autofill:focus {
 }
 
 .products {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -927,7 +938,7 @@ input:-webkit-autofill:focus {
 }
 
 .products__content {
-  height: 80vh;
+  margin-top: 6.125rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -935,7 +946,8 @@ input:-webkit-autofill:focus {
 }
 
 .products__slider {
-  width: 70rem;
+  margin-top: 3.75rem;
+  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -958,7 +970,6 @@ input:-webkit-autofill:focus {
 }
 
 .products__link {
-  width: 20rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -981,6 +992,7 @@ input:-webkit-autofill:focus {
 }
 
 .products__catalog {
+  margin-top: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1009,12 +1021,10 @@ input:-webkit-autofill:focus {
 }
 
 .position__content {
-  margin-top: 6vh;
+  margin-top: 7.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  height: 78.75rem;
 }
 
 .position__title {
@@ -1024,6 +1034,7 @@ input:-webkit-autofill:focus {
 }
 
 .position__map {
+  margin-top: 4.125rem;
   width: 100%;
   height: 37.5rem;
   border: 1px solid #A8C6E4;
@@ -1032,6 +1043,7 @@ input:-webkit-autofill:focus {
 }
 
 .position__stores {
+  margin-top: 5.75rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1054,12 +1066,11 @@ input:-webkit-autofill:focus {
 
 .news {
   background-image: linear-gradient(180deg, #85BFFF 0%, #248BFF 100%);
-  height: 76.875rem;
   overflow: hidden;
 }
 
 .news__container {
-  height: 682px;
+  height: 42.625rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1079,7 +1090,7 @@ input:-webkit-autofill:focus {
 .news__navigate {
   display: flex;
   justify-content: space-between;
-  width: 140px;
+  width: 8.75rem;
 }
 
 .news__slider {
@@ -1089,7 +1100,6 @@ input:-webkit-autofill:focus {
 }
 
 .news__content {
-  height: 23.125rem;
   line-height: 1.625rem;
   background-color: #FFF;
   border-radius: 12px;
@@ -1098,6 +1108,7 @@ input:-webkit-autofill:focus {
   justify-content: flex-start;
   align-items: center;
   padding: 0 1.5625rem;
+  padding-bottom: 1rem;
   font-size: 1.125rem;
   color: #2E3A59;
   box-sizing: border-box;
@@ -1107,7 +1118,6 @@ input:-webkit-autofill:focus {
 .news__img {
   border-radius: 8px;
   margin: 1.625rem 0;
-  width: auto !important;
 }
 
 .news .owl-carousel .owl-stage-outer {
@@ -1193,6 +1203,56 @@ input:-webkit-autofill:focus {
   margin-left: 0.875rem;
 }
 
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  height: 100vh;
+  width: 100%;
+  z-index: 101;
+  background-color: #FFF;
+  transition: .3s ease;
+}
+
+.burger-menu__container {
+  position: relative;
+  padding: 0 0.875rem;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.burger-menu__content {
+  margin-top: 2.5rem;
+}
+
+.burger-menu__link {
+  display: block;
+  width: 100%;
+  border-bottom: rgba(143, 155, 179, 0.5) solid 2px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2E3A59;
+  margin-top: 1.25rem;
+  padding-bottom: 0.875rem;
+}
+
+.burger-menu__contact {
+  display: block;
+  color: #2E3A59;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.burger-menu__contacts {
+  position: absolute;
+  left: 1rem;
+  bottom: 24px;
+}
+
+.burger-menu.active {
+  left: 0;
+}
+
 body {
   background-color: #F9F9F9;
 }
@@ -1271,6 +1331,7 @@ body {
 
 .recipe__img {
   border-radius: 0.5rem;
+  width: 100%;
 }
 
 .recipe__comment {
@@ -1452,7 +1513,6 @@ body {
 }
 
 .other-recipe__content {
-  height: 23.125rem;
   line-height: 1.625rem;
   background-color: #FFF;
   border-radius: 12px;
@@ -1461,6 +1521,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 0 1.5625rem;
+  padding-bottom: 1.25rem;
   font-size: 1.125rem;
   color: #2E3A59;
   box-sizing: border-box;
@@ -1531,6 +1592,10 @@ body {
   html {
     font-size: 12.5px;
   }
+
+  .menu {
+    min-height: 674px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1542,5 +1607,40 @@ body {
 @media (max-width: 1024px) {
   html {
     font-size: 16px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .header__menu,
+  .header__close {
+    position: absolute;
+    right: 0;
+  }
+
+  .header__social {
+    position: absolute;
+    left: 0;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__img {
+    width: 3.75rem;
+  }
+
+  .header__social {
+    display: block;
+  }
+
+  .header__menu {
+    display: block;
   }
 }

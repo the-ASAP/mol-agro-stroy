@@ -556,6 +556,14 @@ function changeCharacteristics(button, values, img, composition){
     source = $(img).parent().find('.active').attr('data-gost')
     $(target).text(source)
 }
+
+function openBurgerMenu(){
+    $('.burger-menu').addClass("active")
+}
+function closeBurgerMenu(){
+    $('.burger-menu').removeClass("active")
+}
+
 function descriptionSwitch(button) {
 
     $(button).parent().find('.active').removeClass('active')
@@ -584,6 +592,13 @@ $().ready(() => {
     $(".item__button").on('click', function () {
         descriptionSwitch(this)
     })
+    $(".header__menu").on('click', function () {
+        openBurgerMenu()
+    })
+    $(".header__close").on('click', function () {
+        closeBurgerMenu()
+    })
+    
     inputTypeSelect($('.contacts__field'))
     contentFadeInOnReady()
     bindModalListeners([]);

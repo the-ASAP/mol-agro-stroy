@@ -42,11 +42,15 @@
     html {
         font-size:13px
     }
+
 }
 
 @media (max-width: 1250px) {
     html {
         font-size:12.5px
+    }
+    .menu{
+        min-height: 674px;
     }
 }
 
@@ -60,4 +64,31 @@
     html {
         font-size:16px
     }
+    .nav{
+        display: none;
+    }
+    .header{
+        justify-content: center;
+        &__menu, &__close{
+            position: absolute;
+            right: 0;
+        }
+        &__social{
+            position: absolute;
+            left: 0;
+        }
+        &__phone{
+            display: none;
+        }
+        &__img{
+            width: 3.75rem;
+        }
+        &__social{
+            display: block;
+        }
+        &__menu{
+            display: block;
+        }
+    }
+
 }

@@ -62,6 +62,10 @@
   html {
     font-size: 12.5px;
   }
+
+  .menu {
+    min-height: 674px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -73,5 +77,40 @@
 @media (max-width: 1024px) {
   html {
     font-size: 16px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .header__menu,
+  .header__close {
+    position: absolute;
+    right: 0;
+  }
+
+  .header__social {
+    position: absolute;
+    left: 0;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__img {
+    width: 3.75rem;
+  }
+
+  .header__social {
+    display: block;
+  }
+
+  .header__menu {
+    display: block;
   }
 }

@@ -162,6 +162,12 @@ input {
         font-weight: bold;
         font-size: 1.375rem;
     }
+    &__social{
+        display: none;
+    }
+    &__menu{
+        display: none;
+    }
 }
 
 .nav {
@@ -251,6 +257,10 @@ input {
         width: 54.375rem;
         max-width: 100%;
         margin-left: 4.5rem;
+    }
+
+    &__big-container{
+        height: 100vh;
     }
 
     &__button {
@@ -659,20 +669,20 @@ input {
     }
 
 .products {
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
     &__title {
+
         background: $footer;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     &__content {
-        height: 80vh;
+        margin-top: 6.125rem;   
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -680,7 +690,8 @@ input {
     }
 
     &__slider {
-        width: 70rem;
+        margin-top: 3.75rem;
+        width: 90%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -703,7 +714,7 @@ input {
     }
 
     &__link {
-        width: 20rem;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -726,6 +737,7 @@ input {
     }
 
     &__catalog {
+        margin-top: 5rem;
         @extend %button;
         display: flex;
         align-items: center;
@@ -757,12 +769,10 @@ input {
 
 .position {
     &__content {
-        margin-top: 6vh;
+        margin-top: 7.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
-        height: 78.75rem;
     }
 
     &__title {
@@ -772,6 +782,7 @@ input {
     }
 
     &__map {
+        margin-top: 4.125rem;
         width: 100%;
         height: 37.5rem;
         border: 1px solid $map;
@@ -780,6 +791,7 @@ input {
     }
 
     &__stores {
+        margin-top: 5.75rem;
         display: flex;
         flex-wrap: wrap;
     }
@@ -804,11 +816,10 @@ input {
 
 .news {
     background-image: $grad;
-    height: 76.875rem;
     overflow: hidden;
 
     &__container {
-        height: 682px;
+        height: 42.625rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -828,7 +839,7 @@ input {
     &__navigate {
         display: flex;
         justify-content: space-between;
-        width: 140px;
+        width: 8.75rem;
     }
 
     &__slider {
@@ -838,7 +849,7 @@ input {
     }
 
     &__content {
-        height: 23.125rem;
+        
         line-height: 1.625rem;
         background-color: #FFF;
         border-radius: 12px;
@@ -847,6 +858,7 @@ input {
         justify-content: flex-start;
         align-items: center;
         padding: 0 1.5625rem;
+        padding-bottom: 1rem;
         font-size: 1.125rem;
         color: $gen;
         box-sizing: border-box;
@@ -856,7 +868,6 @@ input {
     &__img {
         border-radius: 8px;
         margin: 1.625rem 0;
-        width: auto !important;
     }
     .owl-carousel .owl-stage-outer{
         overflow: visible;
@@ -940,5 +951,50 @@ input {
 
     &__company {
         margin-left: 0.875rem;
+    }
+}
+
+.burger-menu{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100%;
+    z-index: 101;
+    background-color: #FFF;
+    transition: .3s ease;
+
+    &__container{
+        position: relative;
+        padding: 0 0.875rem;
+        box-sizing: border-box;
+        height: 100vh;
+    }
+    &__content{
+        margin-top: 2.5rem;
+    }
+    &__link{
+        display: block;
+        width: 100%;
+        border-bottom: rgba($dark-grey, 0.5) solid 2px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $gen;
+        margin-top: 1.25rem;
+        padding-bottom: 0.875rem;
+    }
+    &__contact{
+        display: block;
+        color: $gen;
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
+    &__contacts{
+        position: absolute;
+        left: 1rem;
+        bottom: 24px;
+    }
+    &.active{
+        left: 0;
     }
 }
