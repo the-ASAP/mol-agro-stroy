@@ -965,6 +965,13 @@ input {
     background-color: #FFF;
     transition: .3s ease;
 
+    &__header{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: .6875rem;
+    }
     &__container{
         position: relative;
         padding: 0 0.875rem;
@@ -998,6 +1005,11 @@ input {
     &.active{
         left: 0;
     }
+}
+.owl-carousel {
+    display: none;
+    width: 100%;
+    z-index: unset;
 }
 
 @media (max-width: 560px) {

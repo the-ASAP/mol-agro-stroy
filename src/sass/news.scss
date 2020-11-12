@@ -6,6 +6,7 @@
     display: block;
     left: 0;
     height: auto;
+
     &__header {
         padding: 0.0625rem 0;
         padding-bottom: 3rem;
@@ -16,26 +17,30 @@
         background-size: cover;
         background-position: center;
     }
-    &__img{
+
+    &__img {
         width: 100%;
     }
+
     &__title {
         margin-top: 7.5rem;
         color: #FFF;
     }
-    &__block{
+
+    &__block {
         margin: 5.75rem 0;
     }
-    &__container{
+
+    &__container {
         flex-direction: column;
         align-items: flex-start;
         height: auto;
 
-        &:last-child{
+        &:last-child {
             margin-top: 2.625rem;
         }
 
-        &>button{
+        &>button {
             margin: 0 auto;
             margin-top: 4.625rem;
             @extend %button--small;
@@ -44,32 +49,37 @@
             width: 12.625rem;
             height: 3.25rem;
             box-shadow: none;
-    
-            &:hover{
+
+            &:hover {
                 border: 2px solid $dark-grey;
             }
+        }
     }
-}
-    &__subtitle{
+
+    &__subtitle {
         font-size: 1.8125rem; //29px
         font-weight: 500;
         color: $dark-grey;
     }
-    &__content{
+
+    &__content {
         width: 32%;
         margin-right: 2%;
-        &:nth-child(3n){
+
+        &:nth-child(3n) {
             margin-right: 0;
         }
+
         animation: fade-in .3s forwards;
         display: none;
-        &:nth-child(n+4){
+
+        &:nth-child(n+4) {
             margin-top: 1.75rem;
-            
+
         }
     }
 
-    &__items{
+    &__items {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -77,13 +87,64 @@
         margin-top: 1.75rem;
     }
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-.footer{
+
+.footer {
     background-image: $grad;
-    
-    &__nav{
+
+    &__nav {
         border-top: none;
     }
-}  
+}
+
+@media (max-width: 1024px) {
+    .news {
+        margin-top: 0 !important;
+        &__block{
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        }
+        &__more {
+            display: none;
+        }
+
+        &__container {
+            margin-top: 0px !important;
+            &:first-child {
+                .owl-prev {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+                .owl-next {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+            &:last-child {
+                margin-top: 2rem;
+                .owl-prev {
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                }
+                .owl-next {
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &__navigate{
+            position: relative !important;
+            bottom: unset !important;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2.5rem;
+        }
+    }
+}

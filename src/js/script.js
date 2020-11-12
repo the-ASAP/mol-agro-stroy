@@ -651,7 +651,7 @@ $().ready(() => {
             nav: true,
             navContainer: ".news__navigate",
         });
-        else
+        else {
         owlGallery(".news__slider", {
             margin: 36,
             items: 1,
@@ -660,6 +660,39 @@ $().ready(() => {
             nav: true,
             navContainer: ".news__navigate",
         });
+        owlGallery(".production__content", {
+            margin: 36,
+            items: 2,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".production__navigate",
+        });
+        owlGallery(".other__slider", {
+            margin: 36,
+            items: 2,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".other__navigate",
+        });
+        owlGallery(".news__items", {
+            margin: 36,
+            items: 2,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".news__navigate",
+        });
+        owlGallery(".recipes__items", {
+            margin: 36,
+            items: 2,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".recipes__navigate",
+        });
+    }
     owlGallery(".other__slider", {
         margin: 36,
         items: 3,

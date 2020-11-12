@@ -1215,6 +1215,14 @@ input:-webkit-autofill:focus {
   transition: .3s ease;
 }
 
+.burger-menu__header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .6875rem;
+}
+
 .burger-menu__container {
   position: relative;
   padding: 0 0.875rem;
@@ -1252,6 +1260,12 @@ input:-webkit-autofill:focus {
 
 .burger-menu.active {
   left: 0;
+}
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  z-index: unset;
 }
 
 .contact__header {

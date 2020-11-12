@@ -106,3 +106,78 @@ body{
         border-top: none;
     }
 }
+
+@media (max-width: 1024px) {
+    .recipes {
+        margin-top: 0 !important;
+        &__block{
+        margin-top: 1.25rem;
+        margin-bottom: 2.5rem;
+        }
+        &__subtitle{
+            margin: 1.5rem 0;
+        }
+        &__more {
+            display: none;
+        }
+
+        &__container {
+            margin-top: 0px !important;
+
+        }
+        &__item{
+            padding: 0.5rem;
+            padding-bottom: 1.25rem;
+            width: 200px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        &__name{
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            margin: 1.125rem 0;
+        }
+        &__comment{
+            display: block;
+            
+            &>svg{
+            width: 1rem;
+            height: 1rem;
+            }
+        }
+        &__navigate{
+            position: relative !important;
+            bottom: unset !important;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2.5rem;
+
+                .owl-prev {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+                .owl-next {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            &:last-child {
+                margin-top: 2rem;
+                .owl-prev {
+                    display: none;
+                    &:first-child {
+                        display: block;
+                    }
+                }
+                .owl-next {
+                    display: none;
+                    &:last-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
