@@ -1490,6 +1490,7 @@ input:-webkit-autofill:focus {
 
   .promo__content {
     margin-left: 0;
+    margin-top: calc(40vh - 200px);
   }
 
   .promo__social {
@@ -1569,12 +1570,6 @@ input:-webkit-autofill:focus {
     margin-top: 2.25rem;
   }
 
-  .products .arrow {
-    width: 0.875rem;
-    padding: 0.625rem 0.75rem;
-    margin-left: 10px;
-  }
-
   .position__content {
     margin-top: 2.5rem;
   }
@@ -1590,17 +1585,133 @@ input:-webkit-autofill:focus {
   }
 
   .position__store {
-    width: 3.75rem;
-    height: 3.75rem;
-    margin-left: clamp(0.8125rem, 5%, 50px);
-    margin-right: clamp(0.8125rem, 5%, 50px);
+    width: 20%;
+    height: auto;
+    margin: 2.5%;
   }
 
   .position__store.position__store:nth-child(7n+1) {
-    margin-left: clamp(0.8125rem, 5%, 50px);
+    margin: 2.5%;
+  }
+
+  .news {
+    margin-top: 5.75rem;
+  }
+
+  .news__container {
+    height: auto;
+    display: block;
+    position: relative;
+    margin-top: 2.25rem;
+  }
+
+  .news__navigate {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    width: auto;
+    z-index: 200;
+  }
+
+  .news__slider {
+    margin-top: 2.75rem;
+    height: 19.875rem;
+  }
+
+  .news__content {
+    padding: 0.5rem;
+    padding-bottom: 1.25rem;
+    width: 200px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .news__img {
+    margin: 0 0 1.125rem 0;
+  }
+
+  .news__header {
+    justify-content: center;
+  }
+
+  .arrow {
+    width: 0.875rem;
+    padding: 0.625rem 0.75rem;
+    margin-left: 10px;
   }
 
   .owl-stage-outer {
     overflow: visible !important;
+  }
+
+  .footer__logo {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .footer__nav {
+    position: relative;
+    padding: 5.875rem 0 4.75rem 0;
+    height: 14.375rem;
+  }
+
+  .footer__contacts {
+    position: absolute;
+    right: 0;
+    top: 1.875rem;
+    height: 360px;
+  }
+
+  .footer__logo {
+    position: absolute;
+    top: 1.25rem;
+  }
+
+  .footer__phone {
+    font-size: 0.875rem;
+  }
+
+  .footer__products,
+  .footer__contacts {
+    width: 50%;
+  }
+
+  .footer__products,
+  .footer__menu {
+    height: auto;
+  }
+
+  .footer__menu {
+    margin-left: 6%;
+  }
+
+  .footer__menu-link {
+    margin-top: 0.875rem;
+  }
+
+  .footer__container {
+    height: 32.25rem;
+  }
+
+  .footer__products {
+    z-index: 2;
+  }
+
+  .footer__img {
+    width: 1.625rem;
+  }
+
+  .footer__link {
+    margin-right: 4%;
+  }
+
+  .footer__copyrights {
+    display: block;
+    margin: 1.625rem 0;
+  }
+
+  .footer__development {
+    margin-top: 1.75rem;
+    display: block;
   }
 }

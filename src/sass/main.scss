@@ -1027,6 +1027,7 @@ input {
         }
         &__content{
             margin-left: 0;
+            margin-top: calc(40vh - 200px);
         }
         &__social{
             display: none;
@@ -1094,11 +1095,6 @@ input {
         &__catalog{
             margin-top: 2.25rem;
         }
-        .arrow{
-            width: 0.875rem;
-            padding: 0.625rem 0.75rem;
-            margin-left: 10px;
-        }
     }
     .position{
         &__content{
@@ -1114,16 +1110,109 @@ input {
             width: auto;
         }
         &__store{
-            width: 3.75rem;
-            height: 3.75rem;
-            margin-left: clamp(0.8125rem,5%, 50px);
-            margin-right: clamp(0.8125rem,5%, 50px);
+            width: 20%;
+            height: auto;
+            margin: 2.5%;
             &.position__store:nth-child(7n+1) {
-                margin-left: clamp(0.8125rem,5%, 50px);
+                margin: 2.5%;
             }
         }
     }
+    .news{
+        margin-top: 5.75rem;
+        &__container{
+            height: auto;
+            display: block;
+            position: relative;
+            margin-top: 2.25rem;
+        }
+        &__navigate{
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+            width: auto;
+            z-index: 200;
+        }
+        &__slider{
+            margin-top: 2.75rem;
+            height: 19.875rem;
+        }
+        &__content{
+            padding: 0.5rem;
+            padding-bottom: 1.25rem;
+            width: 200px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        &__img{
+            margin: 0 0 1.125rem 0;
+        }
+        &__header{
+            justify-content: center;
+        }
+    }
+    .arrow{
+        width: 0.875rem;
+        padding: 0.625rem 0.75rem;
+        margin-left: 10px;
+    }
     .owl-stage-outer{
         overflow: visible !important;
+    }
+    .footer{
+        &__logo{
+            width: 3.75rem;
+            height: 3.75rem;
+        }
+        &__nav{
+            position: relative;
+            padding: 5.875rem 0 4.75rem 0;
+            height: 14.375rem;
+        }
+        &__contacts{
+            position: absolute;
+            right: 0;
+            top: 1.875rem;
+            height: 360px;
+        }
+        &__logo{
+            position: absolute;
+            top: 1.25rem;
+        }
+        &__phone{
+            font-size: 0.875rem;
+        }
+        &__products, &__contacts{
+            width: 50%;
+        }
+        &__products, &__menu{
+            height: auto;
+        }
+        &__menu{
+            margin-left: 6%;
+        }
+        &__menu-link{
+            margin-top: 0.875rem;
+        }
+        &__container{
+            height: 32.25rem;
+        }
+        &__products{
+            z-index: 2;
+        }
+        &__img{
+            width: 1.625rem;
+        }
+        &__link{
+            margin-right: 4%;
+        }
+        &__copyrights{
+            display: block;
+            margin: 1.625rem 0;
+        }
+        &__development{
+            margin-top: 1.75rem;
+            display: block;
+        }
     }
 }

@@ -643,13 +643,23 @@ $().ready(() => {
             nav: true,
             navContainer: ".products__navigate",
         });
-    owlGallery(".news__slider", {
-        margin: 36,
-        items: 3,
-        dots: false,
-        nav: true,
-        navContainer: ".news__navigate",
-    });
+    if (document.documentElement.clientWidth > 1024)
+        owlGallery(".news__slider", {
+            margin: 36,
+            items: 3,
+            dots: false,
+            nav: true,
+            navContainer: ".news__navigate",
+        });
+        else
+        owlGallery(".news__slider", {
+            margin: 36,
+            items: 1,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".news__navigate",
+        });
     owlGallery(".other__slider", {
         margin: 36,
         items: 3,
