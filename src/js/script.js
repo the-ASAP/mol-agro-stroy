@@ -104,34 +104,47 @@ const yandexMapCheckbox = (item, content) => {
         const center = [52.8676167131164, 43.44382600676518];
 
         const coordsnames = ['Москва', 'Нижний Новгород', 'Тольятти', 'Воронеж',
-        'Волгоград', 'Саратов'] //Порядок порядок во всех массивах не случаен, массивы связаны по индексам
+            'Волгоград', 'Саратов'
+        ] //Порядок порядок во всех массивах не случаен, массивы связаны по индексам
         const coords = [
-            [[55.517791982622356, 37.89666086681258],
-            [54.74356271967586, 38.17131906993757],
-            [55.791100679667295, 37.369317116812574],
-            [55.7292249520377, 35.26138063406282],
-            [56.24651800341893, 34.84390016531281],
-            [55.79212984897214, 37.616237390624995]], // Москва
+            [
+                [55.517791982622356, 37.89666086681258],
+                [54.74356271967586, 38.17131906993757],
+                [55.791100679667295, 37.369317116812574],
+                [55.7292249520377, 35.26138063406282],
+                [56.24651800341893, 34.84390016531281],
+                [55.79212984897214, 37.616237390624995]
+            ], // Москва
 
-            [[56.044053283257334, 44.213799538687574],
-            [56.044053283257334, 45.54314524181257],
-            [55.98866904055193, 43.433770241812574]], // Нижний Новгород
+            [
+                [56.044053283257334, 44.213799538687574],
+                [56.044053283257334, 45.54314524181257],
+                [55.98866904055193, 43.433770241812574]
+            ], // Нижний Новгород
 
-            [[53.70069434739826, 48.61931711681259],
-            [53.543938625648615, 48.113946023062574],
-            [53.406297154428586, 48.55339914806257],
-            [54.01892378695066, 48.35564524181259]], // Тольятти
+            [
+                [53.70069434739826, 48.61931711681259],
+                [53.543938625648615, 48.113946023062574],
+                [53.406297154428586, 48.55339914806257],
+                [54.01892378695066, 48.35564524181259]
+            ], // Тольятти
 
-            [[51.57219613776153, 39.31296663176517],
-            [51.8724216336643, 39.34592561614017],
-            [51.661107725177764, 39.290993975515185],
-            [51.48310939769139, 39.148171709890185]], // Воронеж
+            [
+                [51.57219613776153, 39.31296663176517],
+                [51.8724216336643, 39.34592561614017],
+                [51.661107725177764, 39.290993975515185],
+                [51.48310939769139, 39.148171709890185]
+            ], // Воронеж
 
-            [[48.700920378220324, 45.18960311594534],
-            [49.3511384427967, 43.81631210032034]], // Волгоград
+            [
+                [48.700920378220324, 45.18960311594534],
+                [49.3511384427967, 43.81631210032034]
+            ], // Волгоград
 
-            [[51.48344686261666, 46.10693359863277],
-            [51.497592406752176, 45.843948369140584]] // Саратов
+            [
+                [51.48344686261666, 46.10693359863277],
+                [51.497592406752176, 45.843948369140584]
+            ] // Саратов
 
 
 
@@ -145,10 +158,14 @@ const yandexMapCheckbox = (item, content) => {
             [51.540858933675324, 46.00736999999997] //Саратов
         ]
         const orangecoords = [
-            [[54.836633957194664, 37.503440137419325],
-            [54.928477306896326, 38.28896259835681],],
+            [
+                [54.836633957194664, 37.503440137419325],
+                [54.928477306896326, 38.28896259835681],
+            ],
 
-            [[55.80756259301076, 45.73219990304433]],
+            [
+                [55.80756259301076, 45.73219990304433]
+            ],
 
             [],
 
@@ -174,17 +191,17 @@ const yandexMapCheckbox = (item, content) => {
             }, {
                 suppressMapOpenBlock: true
             });
-            
+
             for (let i = 0; i < coords.length; i++) {
                 bluePlacemark.push([])
-                for (let j = 0; j < coords[i].length; j++){
-                bluePlacemark[i].push(new ymaps.Placemark(coords[i][j], {
-                    hintContent: content
-                }))
-                myMap.geoObjects.add(bluePlacemark[i][j]);
-                bluePlacemark[i][j].options.set('visible', bluetrigger);
+                for (let j = 0; j < coords[i].length; j++) {
+                    bluePlacemark[i].push(new ymaps.Placemark(coords[i][j], {
+                        hintContent: content
+                    }))
+                    myMap.geoObjects.add(bluePlacemark[i][j]);
+                    bluePlacemark[i][j].options.set('visible', bluetrigger);
+                }
             }
-        }
             for (let i = 0; i < redcoords.length; i++) {
                 redPlacemark.push(new ymaps.Placemark(redcoords[i], {}, {
                     preset: 'islands#redIcon',
@@ -194,25 +211,25 @@ const yandexMapCheckbox = (item, content) => {
             }
             for (let i = 0; i < orangecoords.length; i++) {
                 orangePlacemark.push([])
-                for (let j = 0; j < orangecoords[i].length; j++){
-                orangePlacemark[i].push(new ymaps.Placemark(orangecoords[i][j],{}, {
-                    preset: 'islands#orangeIcon'
-                }))
-                myMap.geoObjects.add(orangePlacemark[i][j]);
-                orangePlacemark[i][j].options.set('visible', orangetrigger);
+                for (let j = 0; j < orangecoords[i].length; j++) {
+                    orangePlacemark[i].push(new ymaps.Placemark(orangecoords[i][j], {}, {
+                        preset: 'islands#orangeIcon'
+                    }))
+                    myMap.geoObjects.add(orangePlacemark[i][j]);
+                    orangePlacemark[i][j].options.set('visible', orangetrigger);
+                }
             }
-        }
             myMap.controls.remove('routeEditor');
             myMap.behaviors.disable('scrollZoom');
             chooseCity('all')
             checkState(1)
 
             function chooseCity(value) {
-                document.querySelectorAll('.contacts__city').forEach( el =>{
+                document.querySelectorAll('.contacts__city').forEach(el => {
                     $(el).removeClass('active')
                 })
-                if (value==='all'){
-                    document.querySelectorAll('.contacts__city').forEach( el =>{
+                if (value === 'all') {
+                    document.querySelectorAll('.contacts__city').forEach(el => {
                         $(el).addClass('active')
                     })
                     redPlacemark.forEach(el => {
@@ -225,7 +242,7 @@ const yandexMapCheckbox = (item, content) => {
                         el.options.set('visible', orangetrigger)
                     })
                     current = null
-                } else{
+                } else {
                     current = coordsnames.indexOf(value)
                     let item = $('[data-name="' + value + '"]')[1]
                     $(item).addClass('active')
@@ -246,23 +263,24 @@ const yandexMapCheckbox = (item, content) => {
                     orangePlacemark[current].forEach(el => {
                         el.options.set('visible', orangetrigger)
                     })
-                    
+
                 }
 
             }
 
             let changeCenter = (city, obj, type) => {
                 let target = coordsnames.indexOf(city)
-            if (type != "storage"){
-                myMap.setCenter(coords[target][obj], 12, {
-                    checkZoomRange: true
-                });
-            } else {
-                myMap.setCenter(orangecoords[target][$(obj).parent().find('.contacts__item-storage').index(obj)], 12, {
-                    checkZoomRange: true
-                });
+                if (type != "storage") {
+                    myMap.setCenter(coords[target][obj], 12, {
+                        checkZoomRange: true
+                    });
+                } else {
+                    myMap.setCenter(orangecoords[target][$(obj).parent().find('.contacts__item-storage').index(obj)], 12, {
+                        checkZoomRange: true
+                    });
+                }
             }
-        }
+
             function checkState(attr) {
                 switch (attr) {
                     case 1:
@@ -271,26 +289,26 @@ const yandexMapCheckbox = (item, content) => {
                         orangePlacemark.flat(1).forEach(el => {
                             el.options.set('visible', false)
                         })
-                        document.querySelectorAll('.contacts__item').forEach( el =>{
+                        document.querySelectorAll('.contacts__item').forEach(el => {
                             $(el).addClass('active')
                         })
-                        document.querySelectorAll('.contacts__item-storage').forEach( el =>{
+                        document.querySelectorAll('.contacts__item-storage').forEach(el => {
                             $(el).removeClass('active')
                         })
-                        document.querySelectorAll('.contacts__city').forEach( el =>{
-                                $(el).removeClass('hidden')
+                        document.querySelectorAll('.contacts__city').forEach(el => {
+                            $(el).removeClass('hidden')
                         })
-                        if (current === null){
-                        bluePlacemark.flat(1).forEach(el => {
-                            el.options.set('visible', true)
-                            
-                        })
+                        if (current === null) {
+                            bluePlacemark.flat(1).forEach(el => {
+                                el.options.set('visible', true)
 
-                    } else {
-                        bluePlacemark[current].flat(1).forEach(el => {
-                            el.options.set('visible', true)
-                        })
-                    }
+                            })
+
+                        } else {
+                            bluePlacemark[current].flat(1).forEach(el => {
+                                el.options.set('visible', true)
+                            })
+                        }
 
                         break
 
@@ -300,26 +318,26 @@ const yandexMapCheckbox = (item, content) => {
                         })
                         orangetrigger = true;
                         bluetrigger = false;
-                        document.querySelectorAll('.contacts__item').forEach( el =>{
+                        document.querySelectorAll('.contacts__item').forEach(el => {
                             $(el).removeClass('active')
                         })
-                        document.querySelectorAll('.contacts__item-storage').forEach( el =>{
+                        document.querySelectorAll('.contacts__item-storage').forEach(el => {
                             $(el).addClass('active')
                         })
-                        document.querySelectorAll('.contacts__city').forEach( el =>{
-                            if ($(el).find('.contacts__item-storage').index() == -1){
+                        document.querySelectorAll('.contacts__city').forEach(el => {
+                            if ($(el).find('.contacts__item-storage').index() == -1) {
                                 $(el).addClass('hidden')
                             }
                         })
-                        if (current === null){
-                        orangePlacemark.flat(1).forEach(el => {
-                            el.options.set('visible', true)
-                        })
-                    } else {
-                        orangePlacemark[current].flat(1).forEach(el => {
-                            el.options.set('visible', true)
-                        })
-                    }
+                        if (current === null) {
+                            orangePlacemark.flat(1).forEach(el => {
+                                el.options.set('visible', true)
+                            })
+                        } else {
+                            orangePlacemark[current].flat(1).forEach(el => {
+                                el.options.set('visible', true)
+                            })
+                        }
 
                         break
                     default:
@@ -345,9 +363,9 @@ const yandexMapCheckbox = (item, content) => {
 
 const yandexMapContact = () => {
     if ($('#map').length > 0) {
-        const center = [51.542089925604415,46.168938187855495];
-        const coords = [51.556270679051146,46.023970155018596]
-        
+        const center = [51.542089925604415, 46.168938187855495];
+        const coords = [51.556270679051146, 46.023970155018596]
+
         var myPlacemark;
         ymaps.ready(() => {
             var myMap = new ymaps.Map("map", {
@@ -359,10 +377,10 @@ const yandexMapContact = () => {
                 suppressMapOpenBlock: true
             });
 
-                myPlacemark = new ymaps.Placemark(coords,{}, {
-                    preset: 'islands#redIcon',
-                });
-                myMap.geoObjects.add(myPlacemark);
+            myPlacemark = new ymaps.Placemark(coords, {}, {
+                preset: 'islands#redIcon',
+            });
+            myMap.geoObjects.add(myPlacemark);
 
             myMap.controls.remove('routeEditor');
             myMap.behaviors.disable('scrollZoom');
@@ -531,9 +549,10 @@ const inputTypeSelect = (item) => {
         closeSelect(btn, box);
     });
 };
-function changeCharacteristics(button, values, img, composition){
+
+function changeCharacteristics(button, values, img, composition) {
     let target, source;
-    
+
     $(button).parent().find('.active').removeClass('active')
     $(button).addClass('active')
 
@@ -557,10 +576,11 @@ function changeCharacteristics(button, values, img, composition){
     $(target).text(source)
 }
 
-function openBurgerMenu(){
+function openBurgerMenu() {
     $('.burger-menu').addClass("active")
 }
-function closeBurgerMenu(){
+
+function closeBurgerMenu() {
     $('.burger-menu').removeClass("active")
 }
 
@@ -598,7 +618,7 @@ $().ready(() => {
     $(".header__close").on('click', function () {
         closeBurgerMenu()
     })
-    
+
     inputTypeSelect($('.contacts__field'))
     contentFadeInOnReady()
     bindModalListeners([]);
@@ -606,13 +626,23 @@ $().ready(() => {
     if ($('.position__map').length) yandexMap();
     if ($('.contacts__map').length) yandexMapCheckbox();
     if ($('.contact__map').length) yandexMapContact();
-    owlGallery(".products__slider", {
-        margin: 80,
-        items: 3,
-        dots: false,
-        nav: true,
-        navContainer: ".products__navigate",
-    });
+    if (document.documentElement.clientWidth > 1024)
+        owlGallery(".products__slider", {
+            margin: 80,
+            items: 3,
+            dots: false,
+            nav: true,
+            navContainer: ".products__navigate",
+        });
+    else
+        owlGallery(".products__slider", {
+            margin: 80,
+            items: 1,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".products__navigate",
+        });
     owlGallery(".news__slider", {
         margin: 36,
         items: 3,

@@ -36,6 +36,7 @@ body {
     cursor: default;
     background-color: $bgc;
     color: $gen;
+    overflow-x: hidden;
     @extend %scrollbar;
 }
 
@@ -996,5 +997,133 @@ input {
     }
     &.active{
         left: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1.5rem
+    }
+    .promo{
+        &__flex{
+            height: 87vh;
+        }
+        &__title{
+            line-height: 2.75rem;
+        }
+        &__products{
+            display: none;
+        }
+        &__about{
+            position: relative;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            height: auto;
+            right: auto;
+            bottom: auto;
+        }
+        &__content{
+            margin-left: 0;
+        }
+        &__social{
+            display: none;
+        }
+        &__round{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            width: 5.75rem;
+            height: 5.75rem;
+            &>svg{
+                width: 1.4375rem;
+                height: 1.4375rem;
+                margin-left: 2px;
+                margin-top: 3px;
+            }
+        }
+        &__container{
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            height: 10.375rem;
+        }
+        &__border{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 7.625rem;
+            height: 7.625rem;
+        }
+    }
+    .products{
+        &__content{
+            margin-top: 3.375rem;
+        }
+        &__slider{
+            width: 100%;
+            margin-top: 3.375rem;
+        }
+        &__img{
+            height: 10.125rem;
+        }
+        &__link{
+            height: 18.75rem;
+            width: 13.125rem;
+            &::before{
+                width: 13.125rem;
+                height: 13.125rem;
+                left: calc(50% - 6.56125rem);
+            }
+        }
+        &__label{
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            width: 8rem;
+        }
+        &__navigate{
+            position: relative;
+            justify-content: flex-end;
+            width: 100%;
+            right: 0;
+        }
+        &__catalog{
+            margin-top: 2.25rem;
+        }
+        .arrow{
+            width: 0.875rem;
+            padding: 0.625rem 0.75rem;
+            margin-left: 10px;
+        }
+    }
+    .position{
+        &__content{
+            margin-top: 2.5rem;
+        }
+        &__map{
+            margin-top: 2.75rem;
+            height: 320px;
+        }
+        &__stores{
+            margin-top: 3.75rem;
+            
+            width: auto;
+        }
+        &__store{
+            width: 3.75rem;
+            height: 3.75rem;
+            margin-left: clamp(0.8125rem,5%, 50px);
+            margin-right: clamp(0.8125rem,5%, 50px);
+            &.position__store:nth-child(7n+1) {
+                margin-left: clamp(0.8125rem,5%, 50px);
+            }
+        }
+    }
+    .owl-stage-outer{
+        overflow: visible !important;
     }
 }

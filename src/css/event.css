@@ -293,6 +293,7 @@ body {
   cursor: default;
   background-color: #f2f2f2;
   color: #2E3A59;
+  overflow-x: hidden;
 }
 
 section {
@@ -1534,5 +1535,152 @@ body {
 
   .header__menu {
     display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .promo__flex {
+    height: 87vh;
+  }
+
+  .promo__title {
+    line-height: 2.75rem;
+  }
+
+  .promo__products {
+    display: none;
+  }
+
+  .promo__about {
+    position: relative;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    height: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .promo__content {
+    margin-left: 0;
+  }
+
+  .promo__social {
+    display: none;
+  }
+
+  .promo__round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 5.75rem;
+    height: 5.75rem;
+  }
+
+  .promo__round > svg {
+    width: 1.4375rem;
+    height: 1.4375rem;
+    margin-left: 2px;
+    margin-top: 3px;
+  }
+
+  .promo__container {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    height: 10.375rem;
+  }
+
+  .promo__border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.625rem;
+    height: 7.625rem;
+  }
+
+  .products__content {
+    margin-top: 3.375rem;
+  }
+
+  .products__slider {
+    width: 100%;
+    margin-top: 3.375rem;
+  }
+
+  .products__img {
+    height: 10.125rem;
+  }
+
+  .products__link {
+    height: 18.75rem;
+    width: 13.125rem;
+  }
+
+  .products__link::before {
+    width: 13.125rem;
+    height: 13.125rem;
+    left: calc(50% - 6.56125rem);
+  }
+
+  .products__label {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 8rem;
+  }
+
+  .products__navigate {
+    position: relative;
+    justify-content: flex-end;
+    width: 100%;
+    right: 0;
+  }
+
+  .products__catalog {
+    margin-top: 2.25rem;
+  }
+
+  .products .arrow {
+    width: 0.875rem;
+    padding: 0.625rem 0.75rem;
+    margin-left: 10px;
+  }
+
+  .position__content {
+    margin-top: 2.5rem;
+  }
+
+  .position__map {
+    margin-top: 2.75rem;
+    height: 320px;
+  }
+
+  .position__stores {
+    margin-top: 3.75rem;
+    width: auto;
+  }
+
+  .position__store {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-left: clamp(0.8125rem, 5%, 50px);
+    margin-right: clamp(0.8125rem, 5%, 50px);
+  }
+
+  .position__store.position__store:nth-child(7n+1) {
+    margin-left: clamp(0.8125rem, 5%, 50px);
+  }
+
+  .owl-stage-outer {
+    overflow: visible !important;
   }
 }
