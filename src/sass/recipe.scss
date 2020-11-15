@@ -22,6 +22,11 @@ body {
     &__phone {
         color: $gen;
     }
+    &__item{
+        &>svg{
+            height: auto;
+        }
+    }
 }
 
 .recipe {
@@ -76,6 +81,11 @@ body {
             font-size: 1.125rem;
             line-height: 1.6875rem;
         }
+        .recipe{
+            &__ingredients, &__calories{
+                display: none;
+            }
+        }
     }
 
     &__img {
@@ -123,7 +133,10 @@ body {
         margin-top: 11rem;
         top: 6.25rem;
         height: 17rem;
-
+        
+        &:last-child{
+            display: none;
+        }
     }
 
     &__ingredients,
@@ -232,14 +245,15 @@ body {
     overflow: hidden;
 
     &__container {
-        width: 50rem;
+        width: auto;
         margin: 0 auto;
+        margin-left: 15.625rem;
     }
 
     &__header {
         display: flex;
         justify-content: space-between;
-        width: 130%;
+
     }
 
     &__title {
@@ -292,4 +306,196 @@ body {
     &__nav {
         border-top: none;
     }
+}
+@media (max-width: 1024px){
+    .recipe{
+        &__title{
+            font-size: 2.625rem;
+        }
+        &__names, &__values{
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+        &__smallest{
+            width: 90%;
+            &>p{
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+        &__container{
+            width: 57%;
+            margin: 0 auto;
+            margin-left: 0;
+        }
+        &__small{
+            width: 100%;
+        }
+        &__calories, &__ingredients{
+            margin-left: 1.25rem;
+            width: 90%;
+            padding: 1.375rem 1.25rem 1.5625rem;
+        }
+        &__info-title{
+            font-size: 1.375rem;
+        }
+        &__comment{
+            width: 70%;
+            font-size: 1rem;
+            &>svg{
+                height: 1.375rem;
+            }
+        }
+    }
+    .other-recipe{
+        &__container{
+            margin-left: 6rem;
+            width: auto;
+        }
+        &__content{
+            width: 400px;
+        }
+        &__header{
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 768px){
+
+    .recipe {
+        &__comment{
+            font-size: 0.875rem;
+            width: auto;
+            justify-content: flex-start;
+            margin-top: 0;
+            &>svg{
+                height: 1.125rem;
+                margin: 0 1rem;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+        .header {
+            &__close {
+                display: none;
+            }
+        }
+        .burger-menu {
+            .header {
+                &__close {
+                    display: block;
+                }
+            }
+        }
+        &__block{
+            margin-top: 1.5rem;
+        }
+        &__container{
+            width: 100%;
+            margin: 0;
+        }
+        &__small{
+            width: 100%;
+            &>p{
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+        }
+        &__smallest{
+            margin-top: 1.875rem;
+            width: 100%;
+            &>p{
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+        }
+        &__flex{
+            display: block;
+        }
+        &__social{
+            display: none;
+            position: relative;
+            width: 100%;
+            height: auto;
+            flex-direction: unset;
+            top: unset;
+            margin-top: 2.5rem;
+            &:last-child{
+                display: flex;
+            }
+        }
+        &__link{
+            margin-bottom: unset;
+            margin-left: 0.625rem;
+            &>svg{
+                height: auto;
+            }
+            &:last-child{
+                margin-bottom: unset;
+            }
+        }
+        &__share{
+            transform: none;
+            margin-top: unset;
+            font-size: 0.875rem;
+            color: $gen;
+            margin-right: 0.3125rem;
+        }
+        &__img{
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        &__title{
+            font-size: 1.5rem;
+        }
+        &__extra{
+            margin: 1.625rem 0;
+        }
+        &__info{
+            display: none;
+        }
+        &__ingredients{
+            margin-top: 2.25rem;
+            width: 100%;
+        }
+        &__calories{
+            margin-top: 0.875rem;
+            width: 100%;
+        }
+        &__subtitle{
+            margin-top: 2.5rem;
+        }
+    }
+    .other-recipe{
+        margin-top: 3.125rem;
+
+        &__container{
+            width: 100%;
+            position: relative;
+            margin-left: 0;
+        }
+        &__content{
+            width: 200px;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            padding-bottom: 1.25rem;
+            line-height: 1.25rem;
+        }
+        &__slider{
+            height: auto;
+        }
+        &__img{
+            width: 100% !important;
+            margin: 0;
+            margin-bottom: 1.125rem;
+        }
+        &__navigate{
+            position: absolute;
+            width: auto;
+            bottom: -4.125rem;
+            right: 0;
+        }
+    }
+
 }

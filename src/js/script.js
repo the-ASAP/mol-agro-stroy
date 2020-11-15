@@ -634,11 +634,20 @@ $().ready(() => {
             nav: true,
             navContainer: ".products__navigate",
         });
-    else
+    else if (document.documentElement.clientWidth < 768)
         owlGallery(".products__slider", {
             margin: 80,
             items: 1,
             autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".products__navigate",
+        });
+        else 
+        owlGallery(".products__slider", {
+            margin: 20,
+            items: 2,
+            autoWidth: false,
             dots: false,
             nav: true,
             navContainer: ".products__navigate",
@@ -651,7 +660,7 @@ $().ready(() => {
             nav: true,
             navContainer: ".news__navigate",
         });
-        else {
+        else if (document.documentElement.clientWidth < 768){
         owlGallery(".news__slider", {
             margin: 36,
             items: 1,
@@ -692,14 +701,32 @@ $().ready(() => {
             nav: true,
             navContainer: ".recipes__navigate",
         });
+    } else {
+        owlGallery(".production__content", {
+            margin: 36,
+            items: 2,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".production__navigate",
+        });
+        owlGallery(".other__slider", {
+            margin: 36,
+            items: 2,
+            dots: false,
+            nav: true,
+            navContainer: ".other__navigate",
+        });
+        owlGallery(".news__slider", {
+            margin: 36,
+            items: 1,
+            autoWidth: true,
+            dots: false,
+            nav: true,
+            navContainer: ".news__navigate",
+        });
     }
-    owlGallery(".other__slider", {
-        margin: 36,
-        items: 3,
-        dots: false,
-        nav: true,
-        navContainer: ".other__navigate",
-    });
+
     owlGallery(".menu__slider", {
         margin: 40,
         items: 4,

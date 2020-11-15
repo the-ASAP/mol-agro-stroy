@@ -41,6 +41,10 @@
     &__text{
         margin-top: 1.125rem;
     }
+    &__title-map{
+        display: none;
+        color: $blue-subtitle;
+    }
 }
 
 #map{
@@ -52,5 +56,50 @@
 
     &__nav {
         border-top: none;
+    }
+}
+
+@media (max-width: 1024px){
+    .contact{
+        &__title{
+            margin-top: 4.5rem;
+        }
+        &__block{
+            height: auto;
+            padding: unset;
+            margin-top: 4.875rem;
+            margin-bottom: 1rem;
+        }
+        &__container{
+            display: flex;
+            align-items: flex-start;
+        }
+        &__subtitle{
+            font-size: 0.875rem;
+        }
+        &__text{
+            font-size: 0.875rem;
+            margin-top: 0.625rem;
+            &:nth-child(2){
+                font-size: 1.5rem;
+            }
+        }
+        &__map{
+            width: 60%;
+        }
+        &__title-map{
+            display: block;
+        }
+    }
+}
+@media (max-width: 768px){
+    .contact{
+        &__container{
+            display: block;
+        }
+        &__map{
+            margin-top: 5.5rem;
+            width: 100%;
+        }
     }
 }

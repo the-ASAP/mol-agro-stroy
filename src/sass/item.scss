@@ -6,9 +6,11 @@
     display: block;
     left: 0;
     height: auto;
-    &__block{
+
+    &__block {
         margin-top: 5rem;
     }
+
     &__header {
         padding: 0.0625rem 0;
         padding-bottom: 3rem;
@@ -24,6 +26,7 @@
         margin-top: 7.5rem;
         color: #FFF;
     }
+
     &__subtitle {
         background: $footer;
         -webkit-background-clip: text;
@@ -31,11 +34,13 @@
         text-align: left;
         margin-top: 5.25rem;
     }
-    &__container{
+
+    &__container {
         display: flex;
         justify-content: space-between;
     }
-    &__img-box{
+
+    &__img-box {
         width: 40%;
         height: 33.125rem;
         background-color: #FFF;
@@ -45,19 +50,22 @@
         align-items: center;
         box-shadow: 0px 8px 16px rgba(180, 190, 200, 0.54);
     }
-    &__img{
+
+    &__img {
         max-height: 90%;
         max-width: 90%;
         filter: drop-shadow(0px 16px 32px rgba(17, 75, 107, 0.25));
         display: none;
-        &.active{
+
+        &.active {
             display: block;
         }
     }
-    &__content{
+
+    &__content {
         width: 50%;
     }
-    
+
     &__producer {
         box-sizing: border-box;
         width: 10.75rem;
@@ -78,88 +86,106 @@
             filter: $long-shadow;
         }
     }
-    &__name{
+
+    &__name {
         color: $gen;
         margin-top: 2.5rem;
     }
-    &__varieties{
+
+    &__varieties {
         margin-top: 1.875rem;
     }
-    &__variety{
+
+    &__variety {
         @extend %button--active;
         padding: 0.625rem 0.75rem;
         border: 0.125rem solid;
         font-weight: 600;
         margin-left: 0.875rem;
-        &:first-child{
+
+        &:first-child {
             margin-left: 0;
         }
-        &.active{
+
+        &.active {
             border: 0 solid;
             padding: 0.75rem 0.875rem;
             cursor: default;
         }
     }
-    &__characteristics{
+
+    &__characteristics {
         height: 9.75rem;
         display: flex;
         margin-top: 3.5rem;
     }
-    &__category, &__value{
+
+    &__category,
+    &__value {
         display: flex;
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
         margin-left: 4.5rem;
     }
-    &__category{
+
+    &__category {
         margin-left: 0;
         color: $dark-grey;
     }
-    &__buttons{
+
+    &__buttons {
         margin-top: 4.25rem;
         display: flex;
     }
-    &__button{
+
+    &__button {
         @extend %button--active;
         width: 9.375rem;
         height: 3rem;
         border-width: 2px;
         font-weight: 600;
         margin-left: 0.875rem;
-        &:first-child{
+
+        &:first-child {
             margin-left: 0;
         }
-        &.active{
+
+        &.active {
             border: 0;
             cursor: default;
         }
     }
-    &__description, &__composition{
+
+    &__description,
+    &__composition {
         margin-top: 3.5rem;
         color: $dark-grey;
         display: none;
-        &>p{
+
+        &>p {
             margin-top: 1.25rem;
             color: $gen;
         }
     }
-    &__description{
-        &.active{
+
+    &__description {
+        &.active {
             display: block;
         }
     }
-    &__composition{
-        
-        &.active{
-            &.current{
+
+    &__composition {
+
+        &.active {
+            &.current {
                 display: block;
             }
         }
     }
 }
 
-.other{
+.other {
     margin-top: 8rem;
     display: flex;
     flex-direction: column;
@@ -215,7 +241,8 @@
         height: 27.75rem;
         transform: scale(0.7);
         transition: ease .4s;
-        &.center{
+
+        &.center {
             transform: scale(1);
         }
 
@@ -231,10 +258,12 @@
             z-index: -1;
         }
     }
-    &__container{
+
+    &__container {
         position: relative;
     }
-    &__navigate{
+
+    &__navigate {
         position: absolute;
         width: 100%;
         display: flex;
@@ -242,77 +271,126 @@
         transform: translate(0, 50%);
         top: 50%;
     }
-    
+
 }
 
 
 
-.footer{
+.footer {
     background-image: $grad;
-    
-    &__nav{
+
+    &__nav {
         border-top: none;
     }
-}  
+}
 
-@media (max-width: 560px){
-    .item{
-        &__block{
+@media (max-width: 1024px) {
+    .item {
+        &__title {
+            margin-top: 4.5rem;
+        }
+
+        &__img-box {
+            height: 23.125rem;
+        }
+    }
+
+    .other {
+        &__slider {
+            margin: 0 auto;
+        }
+
+        &__link.center {
+            transform: scale(0.7);
+        }
+
+        &__navigate{
+            top: 45%;
+        }
+    }
+
+    .owl-item {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        &__button {
+            width: 50%;
+        }
+
+        &__block {
             margin-top: 2rem;
         }
-        &__container{
+
+        &__container {
             display: block;
             position: relative;
         }
-        &__img-box{
+
+        &__img-box {
             width: 100%;
             position: absolute;
             top: 17.375rem;
             height: 19rem;
         }
-        &__content{
+
+        &__content {
             width: 100%;
         }
-        &__name{
+
+        &__name {
             font-size: 1.5rem;
             font-weight: 700;
         }
-        &__characteristics{
+
+        &__characteristics {
             margin-top: 25.375rem;
         }
-        &__value{
+
+        &__value {
             font-weight: 700;
         }
     }
-    .other{
+
+    .other {
         margin-top: 2.75rem;
-        &__link{
+
+        &__link {
             transform: scale(1);
         }
-        &__slider{
+
+        &__slider {
             margin: 0;
             width: 100%;
             margin-top: 3.375rem;
         }
-        &__img{
+
+        &__img {
             height: 10.125rem;
         }
-        &__link{
+
+        &__link {
             height: 18.75rem;
             width: 13.125rem;
-            &::before{
+
+            &::before {
                 width: 13.125rem;
                 height: 13.125rem;
                 left: calc(50% - 6.56125rem);
             }
         }
-        &__label{
+
+        &__label {
             margin-top: 0.75rem;
             font-size: 0.875rem;
             line-height: 1.25rem;
             width: 8rem;
         }
-        &__navigate{
+
+        &__navigate {
             position: relative;
             justify-content: flex-end;
             width: 100%;
@@ -320,5 +398,10 @@
             transform: none;
             margin-bottom: 4.75rem;
         }
+
+    }
+
+    .other__link.center {
+        transform: none;
     }
 }

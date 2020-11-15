@@ -24,6 +24,14 @@
     html {
         font-size:14.5px
     }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 0.125rem;
+            }
+        }
+    }
 }
 
 @media (max-width: 1400px) {
@@ -36,13 +44,30 @@
     html {
         font-size:13.5px
     }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 2px;
+                padding: 2px;
+            }
+        }
+    }
 }
 
 @media (max-width: 1300px) {
     html {
         font-size:13px
     }
-
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 0px;
+                padding: 2px;
+            }
+        }
+    }
 }
 
 @media (max-width: 1250px) {
@@ -51,6 +76,14 @@
     }
     .menu{
         min-height: 674px;
+    }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                height: 2.875rem;
+            }
+        }
     }
 }
 
