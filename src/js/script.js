@@ -583,7 +583,14 @@ function openBurgerMenu() {
 function closeBurgerMenu() {
     $('.burger-menu').removeClass("active")
 }
-
+function showMap() {
+    $('#map').addClass("active")
+    $('.contacts__hide').addClass("active")
+}
+function hideMap() {
+    $('#map').removeClass("active")
+    $('.contacts__hide').removeClass("active")
+}
 function descriptionSwitch(button) {
 
     $(button).parent().find('.active').removeClass('active')
@@ -626,6 +633,14 @@ $().ready(() => {
     if ($('.position__map').length) yandexMap();
     if ($('.contacts__map').length) yandexMapCheckbox();
     if ($('.contact__map').length) yandexMapContact();
+    if (document.documentElement.clientWidth < 768){
+    $(".contacts__item").on('click', function () {
+        showMap();
+    })
+    $(".contacts__hide").on('click', function () {
+        hideMap();
+    })
+}
     if (document.documentElement.clientWidth > 1024)
         owlGallery(".products__slider", {
             margin: 80,
