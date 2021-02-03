@@ -1,0 +1,142 @@
+@import 'root';
+@import 'keyframes';
+@import 'mixins';
+
+@media (max-width: 1600px) {
+    html {
+        font-size:16px
+    }
+}
+
+@media (max-width: 1550px) {
+    html {
+        font-size:15.5px
+    }
+}
+
+@media (max-width: 1500px) {
+    html {
+        font-size:15px
+    }
+}
+
+@media (max-width: 1450px) {
+    html {
+        font-size:14.5px
+    }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 0.125rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    html {
+        font-size:14px
+    }
+}
+
+@media (max-width: 1350px) {
+    html {
+        font-size:13.5px
+    }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 2px;
+                padding: 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    html {
+        font-size:13px
+    }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 1px;
+                padding: 1px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    html {
+        font-size:12.5px
+    }
+    .menu{
+        min-height: 674px;
+    }
+    .promo{
+        &__round{
+            padding: 2.375rem;
+            &>svg{
+                margin-left: 0;
+                height: 2.875rem;
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size:12px
+    }
+}
+
+@media (max-width: 1024px){
+    .wrapper {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+    html {
+        font-size:16px
+    }
+    .promo{
+        &__round{
+            &>svg{
+                margin-left: 5px;
+                padding: 2px;
+                height: 2.875rem;
+            }
+        }
+    }
+    .nav{
+        display: none;
+    }
+    .header{
+        justify-content: center;
+        &__menu, &__close{
+            position: absolute;
+            right: 0;
+        }
+        &__social{
+            position: absolute;
+            left: 0;
+        }
+        &__phone{
+            display: none;
+        }
+        &__img{
+            width: 3.75rem;
+        }
+        &__social{
+            display: block;
+        }
+        &__menu{
+            display: block;
+        }
+    }
+
+}

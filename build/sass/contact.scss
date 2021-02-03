@@ -1,0 +1,121 @@
+@import 'main';
+
+.contact{
+    &__header {
+        padding: 0.0625rem 0;
+        padding-bottom: 1.75rem;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        background-image: url(../img/contact_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    &__title {
+        margin-top: 7.5rem;
+        color: #FFF;
+        animation: slide-right .5s ease-out;
+    }
+    &__block{
+        padding: 5.625rem 0;
+        height: 30rem;
+    }
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        animation: fade-in .5s ease-out;
+    }
+    &__info{
+        width: 18.125rem;
+    }
+    &__subtitle{
+        margin-top: 1.75rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        &:nth-child(2){
+            margin-top: 0;
+        }
+    }
+    &__map{
+        height: 100%;
+        width: 60%;
+        overflow: hidden;
+        border-radius: 0.75rem;
+    }
+    &__text{
+        margin-top: 1rem;
+        font-size: 1.125rem;
+        font-weight: 400;
+        color: $dark-grey;
+        font-family: Rubik;
+    }
+    &__title-map{
+        display: none;
+        color: $blue-subtitle;
+    }
+}
+
+#map{
+    height: 30rem;
+    width: 100%;
+}
+.footer {
+    background-image: $grad;
+
+    &__nav {
+        border-top: none;
+    }
+}
+
+@media (max-width: 1024px){
+    .contact{
+        &__title{
+            margin-top: 4.5rem;
+        }
+        &__block{
+            height: auto;
+            padding: unset;
+            margin-top: 4.875rem;
+            margin-bottom: 1rem;
+        }
+        &__container{
+            display: flex;
+            align-items: flex-start;
+        }
+        &__subtitle{
+            font-size: 0.875rem;
+            &:nth-child(2){
+                margin-top: 1rem;
+            }
+        }
+        &__text{
+            font-size: 0.875rem;
+            margin-top: 0.625rem;
+            &:nth-child(2){
+                font-size: 1.5rem;
+            }
+        }
+        &__map{
+            width: 60%;
+        }
+        &__title-map{
+            display: block;
+        }
+    }
+}
+@media (max-width: 768px){
+    .contact{
+        &__container{
+            display: block;
+        }
+        &__map{
+            margin-top: 5.5rem;
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 560px){
+    .contact__title{
+        margin-top: 11.75rem;
+    }
+}

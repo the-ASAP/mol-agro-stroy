@@ -1,0 +1,240 @@
+@import 'main';
+
+body {
+    background-color: #F9F9F9;
+}
+
+.awards {
+    background-image: none;
+    position: relative;
+    display: block;
+    left: 0;
+    height: auto;
+    font-size: 1.125rem;
+
+    &__block {
+        margin-bottom: 6rem;
+        animation: fade-in .5s ease-out;
+    }
+
+    &__header {
+        padding: 0.0625rem 0;
+        padding-bottom: 1.75rem;
+        position: relative;
+        width: 100%;
+        background-image: url(../img/recipes_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+        margin-top: 7.5rem;
+        color: #FFF;
+        animation: slide-right .5s ease-out;
+    }
+
+    &__subtitle {
+        margin-top: 3.875rem;
+        background: $footer;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: calc(18px + 53.9rem);
+        overflow: hidden;
+        transition: 1s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 1.375rem;
+        width: 31.33334%;
+        border: 2px solid #8F9BB3;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        color: $dark-grey;
+        margin-left: 3%;
+        color: $gen;
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.75rem;
+
+        &.hidden {
+            display: none;
+        }
+
+        &:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+
+        &:nth-child(n + 4) {
+            margin-top: 3%;
+        }
+    }
+
+    &__img {
+        border-radius: 0.625rem;
+        width: 100%;
+        object-fit: contain;
+        height: 15.5rem;
+    }
+
+    &__name {
+        margin: 1.125rem 0;
+        height: 3.25rem;
+    }
+
+    &__comment {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: $dark-grey;
+        font-weight: 400;
+
+
+        &>svg {
+            height: auto;
+        }
+    }
+
+    &__more {
+        margin: 0 auto;
+        margin-top: 4.625rem;
+        @extend %button--small;
+        text-transform: uppercase;
+        border: 2px solid $dark-grey;
+        width: 12.625rem;
+        height: 3.25rem;
+        box-shadow: none;
+
+        &:hover {
+            border: 2px solid $dark-grey;
+        }
+    }
+
+    &__tagline {
+        margin-top: 1.625rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left {
+        width: 40%;
+    }
+
+    &__right {
+        width: 35%;
+        font-weight: 500;
+    }
+
+    &__items {
+        margin-top: 7.5rem;
+    }
+}
+
+.footer {
+    background-image: $grad;
+
+    &__nav {
+        border-top: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .awards{
+        &__item{
+            width: 48%;
+            margin-left: 4%;
+
+
+            &:nth-child(3n+1) {
+                margin-left: 4%;
+            }
+            &:nth-child(2n+1) {
+                margin-left: 0%;
+            }
+            &:nth-child(n+3) {
+                margin-top: 5%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .awards{
+        &__subtitle{
+            font-weight: bold;
+        }
+        &__tagline{
+            display: block;
+        }
+        &__left, &__right{
+            width: 100%;
+        }
+        &__right{
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media (max-width: 660px){
+    .awards{
+        &__items{
+            height: calc(5vw + 51.9rem);
+        }
+        &__item{
+            width: 100%;
+            margin-left: 0;
+
+            &:nth-child(n+2) {
+                margin-top: 5%;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 560px) {
+    .awards{
+        &__subtitle{
+            font-size: 1.125rem;
+        }
+        &__tagline{
+            font-size: 0.875rem;
+        }
+        &__items{
+            margin-top: 3.125rem;
+            height: calc(12vw + 60.9rem);
+        }
+        &__name, &__comment{
+            font-size: 0.875rem;
+            line-height: 1rem;
+        }
+        &__name{
+            height: 2.25rem;
+            margin: 0.75rem 0;
+        }
+        &__img{
+            height: 12.5rem;
+        }
+
+    }
+}

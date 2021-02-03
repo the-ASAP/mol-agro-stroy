@@ -1,0 +1,380 @@
+@import 'main';
+
+.career{
+    font-size: 1.125rem;
+    &__header {
+        padding: 0.0625rem 0;
+        padding-bottom: 1.75rem;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        background-image: url(../img/contact_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    &__title {
+        margin-top: 7.5rem;
+        color: #FFF;
+        animation: slide-right .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &__block{
+        padding: 5.625rem 0;
+    }
+    &__container{
+        font-size: 1.125rem;
+        animation: fade-in .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &__info{
+        width: 18.125rem;
+    }
+    &__map{
+        height: 100%;
+        width: 60%;
+        overflow: hidden;
+        border-radius: 0.75rem;
+    }
+    &__text{
+        margin-top: 1rem;
+    }
+    &__title-map{
+        display: none;
+        color: $blue-subtitle;
+    }
+    &__comment{
+        width: 37rem;
+        
+    }
+    &__tagline{
+        margin-bottom: 1rem;
+        display: block;
+        font-weight: 500;
+        width: 26.5rem;
+    }
+    &__vacancies{
+        margin-top: 4.875rem;
+    }
+    &__subtitle{
+        color: $gen;
+        padding-bottom: 1.25rem;
+        font-size: 1.125rem;
+        display: block;
+        border-bottom: solid 1px $dark-grey;
+    }
+    &__symbol-minus{
+        display: none;
+    }
+    &__symbol-plus{
+        display: block;
+    }
+    &__item{
+        border-bottom: solid $dark-grey 1px;
+        padding-bottom: 2.5rem;
+        overflow: hidden;
+        height: 2.5rem;
+        transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        
+        &.active{
+            .career__symbol-minus{
+                display: block;
+            }
+            .career__symbol-plus{
+                display: none;
+            }
+        }
+    }
+    &__name{
+        font-size: 1.8125rem;
+        height: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-right: 1.25rem;
+    }
+    &__demands, &__duties, &__schedule{
+        margin-top: 1.25rem;
+    }
+    &__duties, &__schedule{
+        color: $dark-grey;
+    }
+    &__demands-title{
+        margin: 2.375rem 0;
+    }
+    &__duties-title, &__schedule-title{
+        margin: 3rem 0 2.375rem;
+    }
+    &__respond {
+        margin-top: 5rem;
+        @extend %button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3.25rem;
+        width: 12.5rem;
+        text-transform: uppercase;
+        color: $gen;
+        border: 2px $gen solid;
+        background: rgba($color: #000000, $alpha: 0);
+        &:hover {
+            color: $gen;
+            border: 2px $gen solid;
+            background: rgba($color: #000000, $alpha: 0);
+            opacity: 1;
+        }
+    }
+}
+.modal{
+    &__content{
+        box-sizing: border-box;
+        padding: 4.625rem 3.125rem;
+        width: 31.5rem;
+        height: auto;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+    }
+    &__header{
+        width: 19.75rem;
+        text-align: center;
+        margin-bottom: 3.125rem;
+    }
+    &__title{
+        font-size: 1.4375rem;
+        margin-bottom: 1.625rem;
+    }
+    &__attachment{
+        display: block;
+        color: $dark-grey;
+        margin-top: .8rem;
+    }
+    &__close{
+        right: 4%;
+        top: 4%;
+        height: 24px;
+        width: 24px;
+        background: rgba($color: #000000, $alpha: 0);
+        transition: .3s $quad-out;
+        &::after, &::before{
+            width: 130%;
+            right: calc(50% - 15px);
+        }
+        &:hover{
+            opacity: .5;
+            &::after, &::before{
+                background-color: $gen;
+                
+            }
+        }
+    }
+
+    &__submit{
+        margin-top: 4rem;
+        margin-right: auto;
+        margin-left: auto;
+        @extend %button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3.25rem;
+        width: 12.5rem;
+        text-transform: uppercase;
+        color: $gen;
+        border: 2px $gen solid;
+        background: rgba($color: #000000, $alpha: 0);
+        &:hover {
+            color: $gen;
+            border: 2px $gen solid;
+            background: rgba($color: #000000, $alpha: 0);
+            opacity: 1;
+        }
+    }
+    &__errors{
+        text-decoration: none;
+        visibility: hidden;
+        opacity: 0;
+        color: #E31F13;
+        transition: .3s $quad-out;
+        font-size: 0.75rem;
+        display: block;
+        margin-top: 2px;
+    }
+    &__input{
+        border: solid 1px rgba($color: $gen, $alpha: 0.2);
+        height: 2.75rem;
+        width: 100%;
+        border-radius: 4px;
+        padding: 0 0.875rem;
+        box-sizing: border-box;
+
+        &.hidden{
+            display: none;
+        }
+        &-container{
+            margin-top: 0.8rem;
+
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+        &.error{
+            border: 1px solid #E31F13;
+            &+.modal__errors{
+                visibility: visible;
+                opacity: 1;
+            }
+    
+        }
+        &::placeholder {
+            color: $dark-grey;
+        }
+    }
+    &__file {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $gen;
+     }
+    #upload-file {
+       opacity: 0;
+       position: absolute;
+       z-index: -1;
+    }
+} 
+.success{
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: .7);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s $quad-out;
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        .success__modal{
+            margin-bottom: 0;
+        }
+    }
+    &__modal{
+        transition: .3s $quad-out;
+        position: relative;
+        background-color: #fff;
+        width: 25%;
+        height: 50%;
+        box-sizing: border-box;
+        padding: 2.125rem 3.125rem 3.125rem 3.125rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: -10vh;
+        min-width: 325px;
+        min-height: 435px;
+        text-align: center;
+        color: $dark-grey;
+    }
+    &__title{
+        text-align: center;
+        color: $gen;
+    }
+    &__close {
+        @extend %close-btn;
+        background-color: rgba($color: #000000, $alpha: 0);
+        right: 4%;
+        top: 4%;
+        height: 24px;
+        width: 24px;
+        background: rgba(0,0,0,0);
+        transition: .3s $quad-out;
+
+        &:hover{
+            opacity: .5;
+            &::before, &::after{
+                background-color: $gen;
+            }
+
+        }
+        
+
+    }
+}
+#map{
+    height: 30rem;
+    width: 100%;
+}
+.footer {
+    background-image: $grad;
+
+    &__nav {
+        border-top: none;
+    }
+}
+
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+    .career{
+        &__comment{
+            width: 100%;
+        }
+        &__tagline{
+            width: 100%;
+        }
+    }
+    .modal{
+        &__content{
+            width: 80%;
+        }
+    }
+}
+@media (max-width: 620px){
+    .modal{
+        &__content{
+            width: 100%;
+        }
+}
+@media (max-width: 560px){
+    .career{
+        &__block{
+            padding-top: 1.875rem;
+        }
+        &__container{
+            font-size: 0.875rem;
+        }
+        &__subtitle{
+            padding-bottom: 1.625rem;
+        }
+        h3{
+            font-size: 1.4375rem;
+        }
+        &__demands-title{
+            margin: 1.25rem 0;
+        }
+        &__demands, &__duties, &__schedule {
+            margin-top: 0.75rem;
+        }
+        &__duties-title, &__schedule-title {
+            margin: 1.75rem 0 1.25rem;
+        }
+        &__respond{
+            margin-top: 2.25rem;
+        }
+        &__item{
+            &.active{
+                padding-bottom: 0;
+            }
+            
+        }
+    }
+
+    }
+}
